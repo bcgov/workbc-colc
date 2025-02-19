@@ -1,0 +1,317 @@
+.expenses-charts {
+    .panel-content {
+        position: relative;
+        min-height: 465px;
+    }
+}
+
+.expenses-charts__edit {
+    float:right;
+}
+
+.expenses-charts__switcher {
+    list-style:none;
+    padding:0;
+    @extend %clearfix;
+    margin: -20px -20px 35px;
+}
+
+.expenses-charts__switcher__item {
+    padding:10px;
+    float:left;
+    width:50%;
+    text-align:center;
+    background-color: color("grey-selector");
+    height:45px;
+    cursor:pointer;
+    &.is-active{
+        background-color: color("grey-panel");
+        cursor:default;
+    }
+    .icon-left {
+        @include bp(sm,only){
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+    }
+}
+
+.expenses-charts__switcher__text {
+    @include bp(sm,only){
+        display:none;
+    }
+}
+
+.expenses-charts__change-annual {
+    font-size:14px;
+    padding-left:5px;
+    text-decoration: underline;
+}
+
+.expenses-charts__title {
+    margin-bottom:gap();
+    @include bp(sm,only){
+        margin-bottom: gap(3/4)
+    }
+    h2 {
+        color:color('white');
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+.expenses-charts__city {
+    cursor: pointer;
+    padding:0 gap(1/2);
+    margin-top: gap(1/2);
+    .expenses-charts__bar & {
+        display: inline-block;
+        vertical-align: top;
+        @include bp(sm,only){
+            font-size: 14px;
+        }
+    }
+}
+
+// .expenses-charts__city-added {
+//     padding:0 gap(1/2);
+//     .expenses-charts__bar & {
+//         vertical-align: top;
+//         display: inline-block;
+//     }
+// }
+
+.expenses-charts__remove-btn {
+    display:inline-block;
+    margin-left: 30px;
+    padding:0 gap(1/2) 0 0;
+    font-size:14px;
+    .expenses-charts__bar & {
+        @include bp(sm,only){
+            font-size:12px;
+        }
+    }
+    .icon-remove {
+        margin-left:5px;
+        margin-top:0px;
+        @include bp(sm,only){
+            margin-top:-2px;
+        }
+    }
+}
+
+.expenses-charts__pie-chart-container {
+    width: 400px;
+    text-align: center;
+    display: inline-block;
+    @include bp(sm,to,md){
+        display: block;
+        width: 100%;
+    }
+}
+
+.expenses-charts__pie-chart {
+    width:254px;
+    height:250px;
+    display: inline-block;
+    
+    @include bp(sm,to,md){
+        width:280px;
+    }
+}
+
+@media print {
+
+    .expenses-charts {
+    .panel-content {
+            min-height: 0;
+        }
+    }
+
+    .results {
+        padding-bottom: 0;
+    }
+    .expenses-charts__pie-chart {
+        width:254px;
+    }
+
+    .panel-content.is-multiple .expenses-charts__title {
+        width: 100%;
+    }
+
+    .is-multiple .expenses-charts__summary__detailed-container > .expenses-charts__summary__item.more-expense-block{
+        margin-top:5px;
+    }
+    
+    .expenses-charts__summary__itemname {        
+        width: 75% !important;
+    }
+
+    .more-expense-block{
+        margin:15px 0; 
+        border: 1px solid #cecece; 
+        padding-top:10px !important; 
+        padding-bottom:6px !important; 
+        page-break-inside: avoid;
+    }
+
+
+
+    .panel-content.is-multiple .expenses-charts__pie {
+        .expenses-charts__legend {
+            margin-top: 0px; 
+            width:100%;
+            position: relative;
+        } 
+    }
+
+    .panel-content {
+        .expenses-charts__title{ 
+            padding-top:gap(5/4); 
+            margin-bottom:gap(1/2);
+            width: 100%;
+            h2{ color:color("black");  }
+        }
+        .expenses-charts__legend__item, .expenses-charts__summary__item, .expenses-charts__summary__item--bold{ 
+            font-size:12px; 
+            padding: 0px 10px 5px; 
+        }
+        .expenses-charts__legend {
+            display: block; 
+            width: 49%; 
+            margin-top: -25px; 
+            margin-left:0; 
+            float:right; 
+            color:color("print-dark-font"); 
+            font-weight:600; 
+        }
+    }
+}
+.expenses-charts__bar-chart {
+    
+    height:400px;
+    margin:30px auto 0;
+
+    &.has-multiple {
+        height: 600px;
+    }
+}
+
+.expenses-charts__legend{
+    width:330px;
+    display:inline-block;
+    vertical-align:top;
+    margin-top:30px;
+    //margin-left:gap();
+    @include bp(md,only){
+        width:340px;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }  
+    @include bp(sm,only){
+        width:auto;
+        display: block;
+        margin-left:-10px;
+        margin-right:-10px;
+    }
+}
+
+
+
+.expenses-charts__legend__item, .expenses-charts__summary__item {
+    font-size:14px;
+    padding:0px 10px 5px;
+    line-height: 1.4;
+}
+
+.expenses-charts__summary__expenses {
+    cursor: pointer;
+}
+
+.expenses-charts__legend__title {
+    display: inline-block;
+    vertical-align: top;
+    width:65%;
+    .legend {        
+        margin-top: 7px;
+    }
+}
+
+.expenses-charts__money {
+    width:33%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;    
+}
+
+.expenses-charts__summary__money {
+    float:right;
+    margin-left:10px;
+}
+
+.expenses-charts__summary {
+    margin-top:5px;
+    padding:10px 0px;
+}
+
+.expenses-charts__summary__item--bold{
+    @extend .expenses-charts__summary__item;
+}
+
+.expenses-charts__summary__item .expense-pointer{ 
+    position: relative;
+    top: -1px;
+}
+
+.expenses-charts__compare{
+    padding-right: 10px;
+}
+
+// details for Monthly expenses
+.expenses-charts__summary__subitem{
+    padding:3px 0 4px 10px;
+}
+
+.expenses-charts__summary__itemname {
+    display: inline-block;
+    width: 70%;
+}
+
+.expenses-charts__print{
+    span{ display: inline-block; vertical-align: middle; font-size:14px; }
+    .print-icon{
+        padding: 5px 0; margin-right:3px; height: 24px; width: 24px; display: inline-block; border-radius: 12px;
+        svg{ pointer-events: none; display: block; width: 100%; height: 100%; }
+    }
+}
+
+
+
+//flot styles
+
+.flot-y-axis{ 
+    font-size:14px;
+    z-index: 10;
+    @include bp(sm,only){
+        max-width:90px;
+    }
+    .tickLabel{
+        left: 0px !important;
+        text-align: left !important;
+    }
+    .tooltip {
+        width:160px;
+    }
+}
+
+.flot-x-axis{ 
+    font-size:16px;
+}
+
+.barLabel{
+    @include bp(sm,only){
+    font-size:14px;
+    }
+}
+

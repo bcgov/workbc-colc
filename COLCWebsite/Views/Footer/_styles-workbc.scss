@@ -1,0 +1,37 @@
+/* Footer: WorkBC */
+
+footer {
+	@include bp(lg) {
+		// padding-left: 57px;
+		// padding-right: 57px;
+	}
+}
+
+footer .icon-back-to-top {
+	
+	@include bp(sm,to,md) {
+		margin-right:gap();
+		margin-bottom:gap(2.5);
+		width: 32px;
+		height: 32px;
+	}
+	@include bp(lg) {
+		margin-bottom:gap(4);
+	}
+}
+
+footer .lg-pull-right .icon-bc-logo-footer {
+	height: 60px;
+	min-width: 220px;
+}
+
+.footer-links {
+	background-color: color("blueDark");
+}
+
+.footer-menu__item{
+  .no-svg &{
+    float:left;
+  }
+}
+

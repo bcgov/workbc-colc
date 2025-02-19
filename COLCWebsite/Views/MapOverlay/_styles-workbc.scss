@@ -1,0 +1,19 @@
+.map-overlay__header {
+  background: url('../UI/Images/WBC-COLC-Map-Overlay-Banner.png') no-repeat center;
+    padding-top: gap(5/2);
+    padding-bottom: 25px;
+    background-size: cover;
+    h2 {
+      font-size:32px;
+    }
+  @include bp(sm,only) {
+    padding-top: gap();
+    h2 {
+        font-size:18px;
+      }
+    }
+  .reset-google-map__map-btn{
+    height: 24px;
+  }
+      
+}

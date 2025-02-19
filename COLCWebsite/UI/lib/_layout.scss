@@ -1,0 +1,49 @@
+$gap: 20px;
+@function gap($multiplier:1) {
+  @return $gap * $multiplier;
+}
+
+%clearfix {
+  @include clearfix;
+}
+
+$container-width: 980px;
+%container {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  // accommodate for IE8 bug when using max-width and border-box
+  // (padding is added to max-width)
+  .lt-ie9 & {
+    max-width: $container-width - gap(2);
+  }
+
+  @include bp(md) {
+    padding: 0 gap();
+  }
+}
+
+/* swipe carousel */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  &:not([style]) {
+    visibility: visible;
+  }
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+// .expenses-charts {
+//   overflow: hidden;
+// }
+

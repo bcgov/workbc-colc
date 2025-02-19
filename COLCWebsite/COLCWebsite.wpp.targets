@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- =========================================================================================== -->
+  <!-- Inject Target into phase that collects files and validates for inclusion in package -->
+  <PropertyGroup>
+    <OnAfterCollectFilesFrom_binDeployableAssemblies>
+      $(OnAfterCollectFilesFrom_binDeployableAssemblies);
+      CustomCollectFiles;
+    </OnAfterCollectFilesFrom_binDeployableAssemblies>
+
+    <PackageUsingManifestDependsOn>
+      $(PackageUsingManifestDependsOn);
+      AddSkipActions;
+    </PackageUsingManifestDependsOn>
+  </PropertyGroup>
+
+  <!-- =========================================================================================== -->
+  <!--
+  Target that collects all the files external to the VS solution that are required to be included in the 
+  deploy package for deployment so that MSDeploy can do a sync when the package is deployed.
+  Collects all the files needed to run the websites and kentico cms
+  -->
+  <Target Name="CustomCollectFiles">
+    <Message Text="CustomCollectFilesTarget Adding:" />
+    <ItemGroup>
+
+      <FilesForPackagingFromProject Include="%(Dependencies.Identity)" >
+        <DestinationRelativePath>bin\%(Filename)%(Extension)</DestinationRelativePath>
+        <FromTarget>$(MSBuildThisFile)</FromTarget>
+      </FilesForPackagingFromProject>
+
+    </ItemGroup>
+    <Message Text="@(FilesForPackagingFromProject)" />
+  </Target>
+
+
+  <!-- =========================================================================================== 
+  MSDeploy can be used to synchronize the deployment package with the destination adding, updating and deleting
+  files. There are cases where certain directories and files should not be modified, added or deleted when deploying
+  updates to the website directory so skip actions are required to prevent an unwanted action from occuring
+  -->
+  <!-- Add skip actions for web deployment via command line -->
+  <!-- Skip delete of files in App_Data: 
+  http://stackoverflow.com/questions/8900005/how-do-i-get-msdeploy-to-create-app-data-if-it-doesnt-exist-but-not-delete-any-->
+  <Target Name="AddSkipActions">
+    <ItemGroup>
+      <MsDeploySkipRules Include="SkipDeleteAppData">
+        <SkipAction>Delete</SkipAction>
+        <ObjectName>filePath</ObjectName>
+        <AbsolutePath>$(_Escaped_PackageTempDir)\\App_Data\\.*</AbsolutePath>
+        <XPath></XPath>
+      </MsDeploySkipRules>
+      <MsDeploySkipRules Include="SkipDeleteAppData">
+        <SkipAction>Delete</SkipAction>
+        <ObjectName>dirPath</ObjectName>
+        <AbsolutePath>$(_Escaped_PackageTempDir)\\App_Data\\.*</AbsolutePath>
+        <XPath></XPath>
+      </MsDeploySkipRules>
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,97 @@
+@import "../fonts/dinweb";
+@import "compass/typography";
+
+@include establish-baseline;
+
+body {
+  font-family:$workbc-font-medium;
+  color: color('bodyText');
+}
+
+h2,h3,h4,h5,h6{
+  font-family:$workbc-font-medium;
+  font-weight:normal;
+  display: inline-block;
+}
+
+
+h2,h4{
+    color:color("white");
+  margin:0px;
+}
+
+
+h1 {
+font-family:$workbc-font-medium;
+color: color("white");
+font-size: 48px;
+line-height: 1em;
+font-weight: 300;
+margin: gap(3/2) 0 gap(1);
+@include bp(sm,to,md) {
+ font-size: 23px;
+ margin: 10px 0 10px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+}
+
+h2{
+  font-size:18px;   
+}
+
+h3{
+  font-size: 16px;
+  margin: 18px 0px;
+  //font-family: $font-bold;
+}
+
+h4 {
+  font-size:15px;
+  font-weight:bold;
+}
+
+h5 {
+  font-size:13px;
+}
+
+.bold{
+  //font-family: $font-bold;
+}
+
+.subtitle{
+  font-size:20px;
+  @include bp(sm, only) {
+    font-size:16px;
+  }
+}
+
+.large{
+  font-size:32px;
+  margin-bottom:gap(1);
+  line-height:50px;
+}
+
+a, a:active, a:focus, a:visited {
+	text-decoration: none;
+  color: color('blueDark');
+}
+
+a:focus,a:active {
+  color: color('blueDark');
+}
+
+.error-msg,
+.success-msg {
+  float:none;
+  padding:gap(1) 0px;
+  display:none;
+}
+
+.success-msg {
+  color: color('green');
+}
+
+.error-msg {
+  color: color('red-workbc');
+}

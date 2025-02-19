@@ -1,0 +1,104 @@
+%button {
+  border: none;
+  line-height: inherit;
+  background-color:transparent;
+  &:focus { outline: thin dotted; }
+  color: color("white");
+  text-decoration: none;
+}
+
+%button-short{
+  width:170px;
+  @include bp(sm, only) {
+    width: 100%;
+  }
+}
+
+%button-medium{
+  width:180px;
+  @include bp(sm, only) {
+    width: 100%;
+  }
+}
+
+%button-long{
+  width:220px;
+  @include bp(sm, only) {
+    width: 100%;
+  }
+}
+
+%primary-button {
+  @extend %button;
+  background-color: color('primary'); 
+  padding: 12px gap(1/2);
+  line-height: 20px;  
+}
+
+%primary-button-icon {
+  @extend %primary-button;
+  padding:0px gap(1/2);
+  display:inline-block;
+  span {
+    vertical-align: middle;
+    margin-top: -2px;
+  }  
+}
+
+%transparent-button-icon {
+  @extend %button;
+  padding:0px gap(1/2);
+  display:inline-block;
+  span {
+    vertical-align: middle;
+    margin-top: -2px;
+  }  
+}
+
+%primary-button-icon-boxed {
+  @extend %primary-button;
+  position:relative;
+  padding:10px 45px 10px 10px;
+  line-height: 20px;
+  span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -10px;
+  }
+}
+
+%primary-button-icon-boxed-large {
+  @extend %primary-button;
+  position:relative;
+  padding:16px 70px 14px 20px;
+  span {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -15px;
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -10px;
+  }
+}
+
+%react-button {
+  @extend %button;
+  display:block;
+  float:left;
+  clear: left;
+  margin-top:20px;
+  @include bp(lg, only) {
+   clear:none;
+   margin-left:7px;
+   margin-top:30px;
+  }
+  @include bp(sm, only) {
+   float:none;
+   margin: 20px auto 0px;
+  }
+}

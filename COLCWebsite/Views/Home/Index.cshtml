@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        @Html.Partial("~/Views/HtmlHead/view.cshtml")
+    </head>
+    <body>
+        <div class="page">
+            <header class="head-container show-for-print">
+                <div class="container">
+                    @if (@ViewBag.Skin == "workbc")
+                    {
+                        <a href="http://www.workbc.ca" class="icon-WorkBC-logo" title="Work BC">
+                            <img src="~/UI/images/workbc/workbc-header-logo.svg" alt="WorkBC" title="WorkBC">
+                        </a>
+                    } else {
+                        <a href="http://www.welcomebc.ca/home.aspx" class="icon-welcomebc-logo" title="Welcome BC">
+                            <img src="~/UI/images/welcomebc/welcomebc-header-logo.svg" alt="WelcomeBC" title="WelcomeBC">
+                        </a>
+                    }
+                    <div class="mobileMenuBtn hidden-desktop hide-for-print">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            MENU
+                        </button>
+                    </div>
+                </div>
+            </header>            
+            @Html.Partial("~/Views/Menu/view.cshtml")
+            <div class="page-content layout-full-width">
+                <div class="banner-image-r"></div>
+                <main class="page-content-main">
+                    
+                    <div class="container-wrap">                    
+                        @Html.Partial("~/Views/Overview/view.cshtml")
+
+                        <div class="results container">
+
+                        @Html.Partial("~/Views/ExpensesCharts/view.cshtml") 
+                        <div class="disclaimer hide-for-print"><h6>Disclaimer <br/>The cost of living calculator (COLC) was built using data collected through the Economic Research Institute. You can view more detail on their data collection practices <a href="http://www.erieri.com/" target="_blank" title="Economic Research Institute">here</a>.  Please note that the COLC is meant to provide a basic estimate of the current cost of living in different B.C. cities; results received from this calculator are designed for comparative and information purposes only.  Accuracy is not guaranteed.</h6></div>                   
+
+                        @Html.Partial("~/Views/RegionalDetails/view.cshtml")
+                        @Html.Action("InfoBoxesPartial", "InfoBoxes", new { skin = @ViewBag.Skin })
+
+                            @if (@ViewBag.Skin == "welcomebc")
+                            {
+                                <div class="clearfix">
+                                <button type="button" class="back-to-top orange">Back to top</button>
+                                </div>
+                            }else
+                            {
+                                <div class="clearfix">
+                                    <button type="button" class="back-to-top icon-back-to-top pull-right" title="Back to top"></button>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </main>                
+            </div>
+            <div class="content-outer-bottom"></div>
+            <footer class="page-footer show-for-print">               
+               
+                <div class="footer-links hide-for-print">
+                    <div class="container">
+                        <nav class="footer-menu">                        
+                            <ul class="footer-menu__list">
+                                <li class="footer-menu__item"><a href="http://www2.gov.bc.ca/gov/content/home/accessibility" target="_blank" class="footer-menu__link">Accessibility</a></li>
+                                <li class="footer-menu__item"><a href="https://www.workbc.ca/Browsers.aspx" class="footer-menu__link">Browsers</a></li>
+                                <li class="footer-menu__item"><a href="http://www2.gov.bc.ca/gov/content/home/disclaimer" target="_blank" class="footer-menu__link">Disclaimer</a></li>
+                                <li class="footer-menu__item"><a href="http://www2.gov.bc.ca/gov/content/home/privacy" target="_blank" class="footer-menu__link">Privacy</a></li>
+                                <li class="footer-menu__item"><a href="http://www2.gov.bc.ca/gov/content/home/copyright" target="_blank" class="footer-menu__link">Copyright</a></li>
+                                <li class="footer-menu__item"><a href="https://www.workbc.ca/Sitemap.aspx" class="footer-menu__link">Sitemap</a></li>
+                                @if (@ViewBag.Skin == "workbc") 
+                                {
+                                    <li class="footer-menu__item"><a href="http://www.workbc.ca/Francais" class="footer-menu__link" target="_blank">Français</a></li>
+                                }
+                                @if (@ViewBag.Skin == "workbc")
+                                {
+                                    <li class="footer-menu__item"><a href="http://www.welcomebc.ca" class="footer-menu__link">Visit WelcomeBC</a></li>
+                                }
+                                else
+                                {
+                                    <li class="footer-menu__item"><a href="https://www.workbc.ca" class="footer-menu__link">Visit WorkBC</a></li>
+                                }
+                            </ul>
+                        </nav>                       
+                    </div>
+                </div>
+                <div class="copyright show-for-print">
+                    <div class="container">
+                        <p class="page-footer__copyright-text">Copyright &copy; @DateTime.Now.Year Province of British Columbia. All rights reserved.</p>
+                        <div class="page-footer-logo hide-for-print">
+                            <a href="http://www2.gov.bc.ca/" class="icon-bc-logo-footer" title="Province of British Columbia" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+
+              </footer>
+            <div class="map-overlay">
+                @Html.Partial("~/Views/MapOverlay/view.cshtml")
+            </div>
+            @Html.Partial("~/Views/HtmlFoot/view.cshtml")
+        </div>
+    </body>
+</html>

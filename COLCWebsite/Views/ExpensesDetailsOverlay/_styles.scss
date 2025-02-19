@@ -1,0 +1,234 @@
+.expenses-details__form {
+    .panel-header{
+        cursor: pointer;
+        position:relative;
+    }
+    .icon-expand-panel{
+        display:none;
+    }
+    .collapsed-toggle .icon-expand-panel {
+        display:block;
+    }
+    .icon-collapse-panel{
+        display:block;
+    }
+    .collapsed-toggle .icon-collapse-panel {
+       display:none;
+    }
+    .icon-info{
+        margin-left:5px;
+        margin-top:-3px;
+    }
+    .no-svg &{
+      margin-bottom: 90px;
+    }
+}
+
+.expenses-details__header {
+  padding-top: gap();
+  position: relative;
+  padding-right: 150px;
+  @include bp (md,only){
+    padding-right: 195px;
+  }
+  @include bp (sm,only){
+    padding-top: gap(5/2);
+    padding-right: gap();
+  }
+  h2{
+    display: inline-block;
+  }
+}
+
+.expenses-details__single-city {
+  color: color('white');
+  font-size: 20px;
+  @include bp (md,only){
+    margin-top: gap();
+  }
+
+  @include bp (lg) {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.expenses-details__expand{
+  position:absolute;
+  padding: 0 gap(3/4) 0 0;
+  line-height: 2em;
+  right:15px;
+  top: 20px;
+  @include bp (md,only){
+    margin-right: 35px;
+  }
+  @include bp (sm,only){
+    right: auto;
+    top: auto;
+    position: relative;
+    display:block;
+    margin-top:gap(1/2);
+  }
+}
+
+.expenses-details__expand__expand{
+  display: block;
+  .expand-all & {
+    display: none;
+  }
+}
+
+.expenses-details__expand__collapse{
+  display: none;
+  .expand-all & {
+    display: block;
+  }
+}
+
+.expenses-details__content {
+  padding:0;
+  margin:0;
+  @include bp (sm,only){
+    margin: 0;
+    padding:0 gap() gap();
+  }
+}
+
+.expenses-details__form__section-container {
+  @extend %clearfix;
+}
+
+.expenses-details__form__section {
+  width:50%;
+  float:left;
+  @include bp (sm,only){
+    width: 100%;
+    float:none;
+  }
+}
+
+.expenses-details__form__section--left {
+  @extend .expenses-details__form__section;
+  padding:0 12px 0 24px;
+  @include bp (sm,only){
+    padding:0;
+  }
+}
+
+.expenses-details__form__section--right {
+  @extend .expenses-details__form__section;
+  padding:0 24px 0 12px;
+  @include bp (sm,only){
+    padding:0;
+  }
+}
+
+.expenses-details__field {
+  margin:gap() 0 0;
+  position: relative;
+  vertical-align: top;
+  @include bp (sm,only){
+    margin:gap() 0 0;
+    display:block;
+  }
+}
+
+.expenses-details__view-more {
+  margin:gap(3/4) 25px 0;
+  clear:both;
+  font-size: 14px;
+  display: inline-block;
+  cursor: pointer;
+  @include bp (sm,only){
+    margin-left:0;
+
+  }
+  &.collapsed-toggle{
+    margin-bottom:gap();
+    margin-top:gap(3/4);
+    @include bp (sm,only){
+      margin-left:0;
+
+    }
+  }
+}
+
+.expenses-details__subheading {
+  display:block;
+  margin-bottom:-10px;
+  padding:10px 24px 0px;
+  font-size:14px;
+}
+
+.expenses-details__subheading--no-nest {
+  @extend .expenses-details__subheading;
+  padding-top:20px
+}
+
+.expenses-details__view-more-content {
+  margin-bottom:gap();
+}
+
+.expenses-details__tools {
+  @extend %clearfix;
+  padding:gap(2) gap();
+  @include bp (sm,only){
+    padding:gap(3/2) gap();
+  }
+}
+
+.expenses-details__reset {
+    float: left;
+    color: color('bodyText');
+    text-decoration:underline;
+    margin-top:gap(1/2);
+}
+
+.expenses-details__submit {
+    float:right;
+}
+
+.expenses-details__compare {
+  width:340px;
+  display:inline-block;
+  .form-select {
+    width:190px;
+    display:inline-block;
+    @include bp (md,only){
+      width:250px;
+    }
+    @include bp (sm,only){
+      width:auto;
+      display:block;
+    }
+  }
+  @include bp (sm,to,md){
+    width:100%;
+    display:block;
+    margin-top:gap(1/2);
+    padding-left:0;
+  }
+}
+
+.expenses-details__share {
+  display:inline-block;
+  font-size:14px;
+  color:color('white');
+  @include bp (sm,only){
+    margin-top:gap(1/2);
+    padding-left:0;
+  }
+}
+
+.expenses-details__form {
+  h4{
+    margin-left: gap();
+  }
+  .legend {
+    position: absolute;
+  }
+}
+
+.icon-info, .icon-info-white {
+  cursor:pointer;
+}

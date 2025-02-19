@@ -1,0 +1,149 @@
+/* Menu: shared */
+
+.icon-bc-jobsplan{
+  margin-left:gap();
+  @include bp(lg) {
+    margin-left:gap(2); //40px;
+  }
+}
+
+.head-container {
+  @include clearfix;
+  @include bp(sm,to,md) {
+    position:relative;
+    padding:23px 0;
+    overflow: hidden;
+    a[class^="icon-"] {
+      display: block;
+      float:left;
+    }
+    .icon-Welcome-BC {
+      height:30px;
+      width:125px;
+      margin-top:10px;
+      margin-bottom:10px;
+      margin-left:15px;
+    }
+
+    .icon-workbc-header-logo {
+      height:29px;
+      width:208px;
+      margin-left:20px;
+    }
+    .icon-welcomebc-header-logo {
+      height:30px;
+      width:217px;
+      margin-left:20px;
+    }
+  }
+}
+
+.main-menu {
+  @include bp(sm,to,md) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 110;
+    border-top:1px solid color("white");
+  }
+}
+
+.main-menu__list {
+      padding:0;        
+      display: table;
+      width: 100%;
+      //border-bottom: $navigation__list--desktop-border-bottom-width solid $navigation__list--desktop-border-bottom-color;
+      margin: 0;
+      z-index: 10;
+      @include bp(lg) {
+        margin: 0 -12px;
+      }
+}
+
+.main-menu__item {
+  @include bp(sm,to,md) {
+    border-top:1px solid color("white");
+    &:first-child {
+      border:none;
+    }
+  }
+  @include bp(lg) {
+    display: table-cell;
+  }
+}
+
+a.main-menu__link {
+  display: block;
+  padding-top:15px;
+  padding-bottom:15px;
+  color: color("white");
+  &:hover{
+    //color: color("white");
+  }
+  @include bp(sm,to,md) {
+    padding-left:gap();
+    line-height: 1;
+  }
+  @include bp(lg) {
+    padding: 18px 15px;
+    line-height: normal;
+    min-height: 76px;
+  }
+}
+
+.mobileMenuBtn {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  width: 50px;
+  text-align: center;
+}
+
+.navbar-toggle {  
+  position: relative;
+  padding: 0;
+  color:color('blueDark');
+  font-weight: 700;
+}
+
+.navbar-toggle .iconbar {
+  display: block;
+  width: 16px;
+  height: 2px;
+  margin: 0 auto 4px;
+  background-color: color("white");
+}
+
+.navbar-collapse.in {
+  overflow-y: auto;
+}
+
+.navbar-collapse {
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  @include bp(lg) {
+    display: block !important;
+  }
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.in {
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: hidden;
+}

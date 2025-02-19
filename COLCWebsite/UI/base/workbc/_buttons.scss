@@ -1,0 +1,29 @@
+button {
+  @extend %button;
+}
+
+.boxed{
+  @extend %button;
+  background: color("blueDot");
+  color: color("blueDark");
+  font-size:13px;
+  font-weight: 600;
+  line-height: 1em;
+  width:140px;
+  position: relative;
+  padding: 14px 50px 14px 10px;
+  text-align:left;
+  font-family: $workbc-font-bold;
+  span {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: 20px;
+  }
+}
+
+.boxed--bigger{
+  @extend .boxed;
+  width:240px;
+}
+

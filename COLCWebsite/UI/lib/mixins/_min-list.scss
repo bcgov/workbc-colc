@@ -1,0 +1,16 @@
+/**
+ * Formats a list to have no bullets, padding or margin.
+ * It uses `> li` to not affect any lists nested inside this list.
+ */
+@mixin min-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    list-style-image: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

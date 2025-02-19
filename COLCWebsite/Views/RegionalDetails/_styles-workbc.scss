@@ -1,0 +1,17 @@
+/* Regional Details - WorkBC*/
+
+.regional-details {
+
+	.regional-details .panel-content {
+		background-color: color('lighterGrey');
+	}
+
+	.panel-header--big {
+		background: url('../UI/Images/WBC-COLC-RegionalDetails-Banner.png') no-repeat center;
+	}
+
+	&__top-occupations {
+		display: flex;
+		flex-direction: column;
+	}
+}

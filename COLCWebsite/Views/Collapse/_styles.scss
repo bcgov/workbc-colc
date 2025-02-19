@@ -1,0 +1,28 @@
+.is-collapsed {
+  display: none;
+}
+.view-text{
+  display:none;
+}
+.hide-text{
+  display:inline-block;
+}
+.collapsed-toggle {
+  .view-text{
+    display:inline-block;
+  }
+  .hide-text{
+    display:none;
+  }
+}
+
+[data-added-button]{
+  padding-right:gap(2);
+  position:relative;
+  width:100%;
+  cursor: pointer;
+  display: inline-block;
+  .collapse-close {
+    display: inline-block;
+  }
+}

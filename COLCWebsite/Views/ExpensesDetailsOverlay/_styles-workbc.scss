@@ -1,0 +1,103 @@
+.expenses-details__header {
+  background: url('../UI/Images/WBC-COLC-Expenses-Overlay-Banner.png') no-repeat center;
+    padding-bottom: 25px;
+    padding-top: gap(5/2);
+    background-size: cover;
+    h2 {
+      font-size:32px;
+    }
+  @include bp(sm,only) {
+    h2 {
+        font-size:18px;
+      }
+    }
+}
+
+.expenses-details__expand {
+  top: 54px;
+  @include bp(md,only) {
+    top: 65px;
+    margin-right: 5px;
+    right: 10px;
+  }
+  @include bp(sm,only) {
+    top: auto;
+  }
+  @include bp (lg) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .icon-expand, .icon-collapse {
+    margin-top: -2px;
+  }
+}
+
+.expenses-details__share {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.expenses-details__form {
+    background:color("lightBlue-bg");
+    margin-top:-1px;
+    .panel-header{
+      padding-top:22px;
+      padding-bottom: gap();
+      padding-right: gap(3);
+        [class*="icon-"] {
+          position: absolute;
+          top: 17px;
+          right: 30px;
+        }
+        h4{
+          font-weight:normal;
+          font-size:20px;
+          @include bp(sm,only){
+            font-size:18px;
+          }
+        }
+        &.even {
+          background:color("inactive-blue");
+        }
+    }
+    .icon-expand-panel{
+        display:none;
+    }
+    .collapsed-toggle .icon-expand-panel {
+        display:block;
+    }
+    .icon-collapse-panel{
+        display:block;
+    }
+    .collapsed-toggle .icon-collapse-panel {
+       display:none;
+    }
+    .icon-info{
+        margin-left:5px;
+        margin-top:-3px;
+    }
+}
+
+.expenses-details__view-more {
+  .icon-chevron-black-small{
+    margin-top: -2px;
+    margin-left:5px;
+  }
+}
+
+.expenses-details__form {
+  .legend {
+    top:27px;
+  }
+  label.error {
+     color: color('red-workbc');
+  }
+}
+
+.expenses-details__subheading {
+  font-family: $workbc-font-bold;
+}
+
+.expenses-details__reset{
+  margin-left: gap(3/4);
+}

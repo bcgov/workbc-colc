@@ -1,0 +1,237 @@
+    @if (@ViewBag.Skin == "workbc") {
+    @:<div class="expenses-charts panel" data-colors='{"housing":"#a3d9f5","living":"#d7cf27","savings":"#f0f0f0","tax":"#a8d03c","bar1":"#a3d9f5","bar2":"#f0f0f0","axis":"#5a6371","label":"#364152","labelOutside":"#ffffff","axisLabel":"#ffffff"}'>
+    }
+    else
+    {
+        @:<div class="expenses-charts panel" data-colors='{"housing":"#69abee","living":"#f07a2d","savings":"#f2d335","tax":"#6dc067","bar1":"#234075","bar2":"#6dc067","axis":"#c4c4c4","label":"#ffffff","labelOutside":"#565656","axisLabel":"#565656"}'>
+    }
+    
+
+<div class="panel-header--big hide-for-print">
+    <h2>Expenses</h2>
+</div>
+<div class="panel-content" rv-class-is-multiple="model:expensesCount | eq 2">
+     
+    <ul class="expenses-charts__switcher hide-for-print">
+        <li rv-on-click="view.switchTab" rv-class-is-active="model:tab | eq 0" class="expenses-charts__switcher__item"><span class="icon-left icon-pie-chart"></span><span class="expenses-charts__switcher__text">Pie chart</span></li>
+        <li rv-on-click="view.switchTab" rv-class-is-active="model:tab | eq 1" class="expenses-charts__switcher__item"><span class="icon-left icon-bar-graph"></span><span class="expenses-charts__switcher__text">Bar graph</span></li>
+    </ul>
+    <div class="expenses-charts__title  show-for-print">
+        <h2><span rv-if="model:isAnnual">Annual expenses</span><span rv-unless="model:isAnnual">Monthly expenses</span></h2>
+        <button type="button" class="expenses-charts__change-annual hide-for-print" rv-on-click="view.toggleAnnual"><span rv-if="model:isAnnual">Change to monthly</span><span rv-unless="model:isAnnual">Change to annual</span></button>
+        <h4 class="print-only print-noc-title">NOC goes here</h4>
+        <button type="button" class="expenses-charts__print pull-right hide-for-print" rv-on-click="view.printEx" >
+            <span class="print-icon"><svg viewBox="0 0 33 31.8" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><title>print</title><g fill="none" stroke="#364153" stroke-width="3"><path class="st000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.4 25.8H1.5v-13h30v13h-8.3"></path><path class="st01" d="M9.6 1.5h13.8v11.3H9.6zM9.4 22h13.8v8.3H9.4z"></path></g></svg></span>
+            <span >Print</span>
+        </button>
+        
+    </div>
+    <div class="loader"></div>
+    <div class="parentCharts">
+    <div class="expenses-charts__pie clearfix  show-for-print" rv-each-expenses="model:expenses" rv-class-is-active="model:tab | eq 0" rv-hide="model:tab | eq 1">
+        @*//if first one*@
+        
+        <div class="expenses-charts__city" rv-on-click="view.showMap">
+            <span class="icon-left icon-map-pin-circle "></span>{expenses:LocationName}
+            <button class="expenses-charts__remove-btn hide-for-print" rv-if="index | gt 0"
+                    rv-on-click="view.removeLocationSet" type="button">
+                Remove city <span class="icon-remove icon-right"></span>
+            </button>
+        </div>
+        <div class="expenses-charts__pie-chart-container"><div class="flot-pie-placeholder expenses-charts__pie-chart"></div></div>
+        <!-- <div class="flot-pie-placeholder expenses-charts__pie-chart"></div> -->
+        <div class="expenses-charts__legend">
+            <div class="expenses-charts__legend__item">
+                <div class="expenses-charts__legend__title">
+                    <span class="legend housing"></span>Housing &amp; Transportation
+                </div>
+                <span class="expenses-charts__money">{ expenses | propertyBy 'HousingAndTransportationExpense' model:period '$'}</span>
+            </div>
+            <div class="expenses-charts__legend__item">
+                <div class="expenses-charts__legend__title">
+                    <span class="legend living"></span>Living &amp; Personal
+                </div>
+                <span class="expenses-charts__money">{ expenses | propertyBy 'LivingAndPersonalExpense' model:period '$'}</span>
+            </div>
+            <div class="expenses-charts__legend__item">
+                <div class="expenses-charts__legend__title">
+                    <span class="legend savings"></span>Saving &amp; Finance
+                </div>
+                <span class="expenses-charts__money">{ expenses | propertyBy 'SavingsAndFinance' model:period '$'}</span>
+            </div>
+            <div class="expenses-charts__legend__item">
+                <div class="expenses-charts__legend__title">
+                    <span class="legend tax"></span>Basic tax
+                    <span class="icon-right icon-info" data-tooltip="" data-placement="top" title="" data-original-title="Basic tax is calculated based on the federal and provincial income tax rates provided by Canada Revenue Agency."></span>                </div>
+                <span class="expenses-charts__money">{ expenses | propertyBy 'BasicTax' model:period '$'}</span>
+            </div>
+            <div class="expenses-charts__summary">
+                <div class="expenses-charts__summary__item">
+                    Income
+                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'Income' model:period '$'}</span>
+                </div>
+                <!-- New code  -->
+                <div class="expenses-charts__summary__item toggle" rv-on-click="view.toggleExpenses">
+                    <span class="expenses-charts__summary__expenses">Expenses<span class="expense-pointer"></span></span>
+                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'Expenses' model:period '$'}</span>
+                </div>
+                <div class="expenses-charts__summary__detailed-container toggle-container">
+                    <div class="expenses-charts__summary__item more-expense-block">
+                        <h4 class="subhead">Monthly Housing &amp; Transportation</h4>
+                        <div class="expenses-charts__summary__subitem">
+                                <span class="expenses-charts__summary__itemname" id="homeLabel"> 
+                                    <span class="OwnIndicatorID"></span> -    
+                                    <span class="SqFtID"></span>
+                                    <span class="DownPaymentLevelID"></span>
+                                    <span class="no-wrap">(Family size - <span class="familySize"></span>)</span>
+                                </span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'HousingExpense' model:period '$'}</span>
+                        </div>
+                        <!-- hide if no value -->
+                        
+                         <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'PropertyTaxExpense' model:period">
+                                <span class="expenses-charts__summary__itemname">Property tax</span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'PropertyTaxExpense' model:period '$'}</span>
+                        </div>
+                        <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'HouseMaintenanceExpense' model:period">
+                                <span class="expenses-charts__summary__itemname">House maintenance</span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'HouseMaintenanceExpense' model:period '$'}</span>
+                        </div>
+                        <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'HomeInsuranceExpense' model:period">
+                                <span class="expenses-charts__summary__itemname">Home insurance</span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'HomeInsuranceExpense' model:period '$'}</span>
+                        </div>
+                        <div class="expenses-charts__summary__subitem">
+                                <span class="expenses-charts__summary__itemname" id="transLabel">
+                                    <span class="NumVehicles"></span>    
+                                    <span class="TransportationType"></span>,
+                                    <span class="MileagePerYearID"></span>    
+                                </span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'TransportationExpense' model:period '$'}</span>
+                        </div>
+                        <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'CarInsuranceExpense' model:period">
+                                <span class="expenses-charts__summary__itemname">Car insurance</span>
+                                <span class="expenses-charts__summary__money">{ expenses | propertyBy 'CarInsuranceExpense' model:period '$'}</span>
+                        </div>
+                    </div>
+                   
+                   <div class="page-break-conditional">
+                        <div class="expenses-charts__city copy" rv-on-click="view.showMap">
+                            <span class="city-for-print">{expenses:LocationName}</span>
+                            
+                        </div>
+
+                        <div class="expenses-charts__summary__item more-expense-block ">
+                            <h4>Monthly Living &amp; Personal</h4>
+                            <div class="expenses-charts__summary__subitem">
+                                    <span class="expenses-charts__summary__itemname">Consumables <br>(Family size - <span class="familySize"></span>)</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'ConsumablesExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'HealthExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Health</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'HealthExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'FoodExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname" >Food</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'FoodExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'EntertainmentExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Entertainment</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'EntertainmentExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'LifeInsuranceExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Life Insurance</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'LifeInsuranceExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'ClothingExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Clothing</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'ClothingExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'FitnessExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Fitness</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'FitnessExpense' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'GroomingExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Grooming</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'GroomingExpense' model:period '$'}</span>
+                            </div>      
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'PetsExpense' model:period">
+                                    <span class="expenses-charts__summary__itemname">Pets</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'PetsExpense' model:period '$'}</span>
+                            </div>
+                        </div>
+
+                        <div class="expenses-charts__summary__item more-expense-block" rv-hide="expenses | expenseNeqZero 'OutstandingLoanPayments,RetirementSavingsPlan,RegisteredEducationSavingsPlan,Savings,Investment' model:period">
+                            <h4>Monthly Savings &amp; Finances</h4>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'OutstandingLoanPayments' model:period">
+                                    <span class="expenses-charts__summary__itemname">Outstanding Loan Payments</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'OutstandingLoanPayments' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'RetirementSavingsPlan' model:period">
+                                    <span class="expenses-charts__summary__itemname">Retirement Savings Plan</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'RetirementSavingsPlan' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'RegisteredEducationSavingsPlan' model:period">
+                                    <span class="expenses-charts__summary__itemname">Registered Education Savings Plan</span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'RegisteredEducationSavingsPlan' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'Savings' model:period">
+                                    <span class="expenses-charts__summary__itemname">Savings (<span class="SavingsAmount"></span>)
+                                    </span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'Savings' model:period '$'}</span>
+                            </div>
+                            <div class="expenses-charts__summary__subitem" rv-hide="expenses | expenseNeqZero 'Investment' model:period">
+                                    <span class="expenses-charts__summary__itemname">Investment (<span class="InvestmentAmount"></span>)
+                                    </span>
+                                    <span class="expenses-charts__summary__money">{ expenses | propertyBy 'Investment' model:period '$'}</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- New code ends -->
+                   
+                </div>
+                 <div class="expenses-charts__summary__item--bold">
+                        Remaining
+                        <span class="expenses-charts__summary__money">{ expenses | propertyBy 'Balance' model:period '$'}</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class="expenses-charts__bar show-for-print" rv-class-is-active="model:tab | eq 1" rv-hide="model:tab | eq 0">
+
+        <div class="expenses-charts__city" rv-each-expenses="model:expenses" rv-on-click="view.showMap">
+            <span class="icon-left icon-map-pin-circle"></span>{expenses:LocationName}<span class="legend--right" rv-class-bar1="index | eq 0" rv-class-bar2="index | eq 1"></span>
+            <button class="expenses-charts__remove-btn hide-for-print" rv-if="index | gt 0"
+                    rv-on-click="view.removeLocationSet" type="button">
+                Remove city <span class="icon-remove icon-right"></span>
+            </button>
+        </div>
+
+        <div id="flot-bar-placeholder" class="expenses-charts__bar-chart" rv-class-has-multiple="model:expensesCount | gt 1"></div>
+        <div id="flot-bar-placeholder" class="expenses-charts__bar-chart-double"></div>
+    </div>
+
+    <button type="button" class="show-compare expenses-charts__compare hide-for-print" rv-on-click="view.addLocationSet" rv-hide="model:locationSetsCount | gt 1">
+        Compare Another City
+        @if (@ViewBag.Skin == "workbc")
+        {
+            <span class="icon-right icon-chevron-white-small"></span>
+        }
+        else
+        {
+            <span class="icon-right icon-chevron"></span>
+        }
+
+    </button>    
+            
+</div>
+
+
+
+</div>
+

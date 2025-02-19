@@ -1,0 +1,150 @@
+/* Regional Details - Shared styles */
+
+.regional-details__content{
+	.panel-content {
+		margin-bottom: gap();
+	}
+}
+
+.regional-details__content{
+	clear: both;
+	@extend %clearfix;
+}
+
+.regional-details .lg-one-half.pull-left {
+	padding-right:gap(0.6); // 12px
+}
+
+.regional-details .lg-one-half.pull-right {
+	@include bp(lg) {
+		padding-left:gap(0.6); // 12px
+		padding-right:gap(0.6); // 12px
+	}
+}
+
+.regional-details__row {
+	margin-bottom:gap(1.25); //25px
+}
+
+.regional-details h3 {
+	//opacity:0;
+	//transition: opacity 0.25s;
+	margin-top:0;
+	margin-bottom:gap(); //20px
+	font-weight:bold;
+}
+
+.regional-details h4 {
+	line-height:gap(1.1); //22px
+	color:color('greyDark');
+}
+
+.regional-details__keyparticipation {
+	clear:both;
+	padding-top:gap(0.75); // 15px
+	@include bp(lg) {
+		padding-right:gap(1.2); // 24px
+	}
+}
+
+.regional-details__small-title {
+	margin-top:0;
+	margin-bottom:0;
+	//max-width:66%;
+	max-width: 78%;
+	line-height:gap(0.9); //18px
+}
+
+.regional-details__block-title {
+	display: block;
+	margin-top:0;
+	margin-bottom:gap(0.6); // 12px
+	margin-right: gap(-0.75); //-15px
+	margin-left: gap(-0.75); //-15px
+	@include bp(lg) {
+		margin-right: gap(-0.6); //-12px
+		margin-left: gap(-0.6); //-12px
+	}
+	padding-top:gap(0.6); // 12px
+	padding-bottom:gap(0.6); // 12px
+	padding-left:gap(0.75); // 15px
+	background:color('white');
+	color:color('greyDark');
+}
+
+.regional-details__map {
+	//opacity:0;
+	transition: opacity 0.25s;
+	text-align:center;
+	img {
+		display:inline-block;
+		margin-bottom:gap(1); //20px
+		max-width:88%;
+		max-height:100%;
+	}
+}
+
+.regional-details__employment-graph {
+	list-style: none;
+	padding-left: 0;
+	border-bottom:1px solid color('lightGrey');
+}
+
+.regional-details__stat {
+	//opacity:0;
+	//transition: opacity 0.25s;
+	font-size:16px;
+	line-height:gap(0.9); //18px;
+	max-width: 66%;
+	text-align: right;
+	font-weight:bold;
+	color:color('blue');
+}
+
+.regional-details__employment_stat-label {
+	//opacity:0;
+	transition: opacity 0.25s;
+	float:left;
+	height:gap(1.6); // 36px
+	width:gap(2.4); // 48px
+	padding-top:gap(0.4); //8px
+	vertical-align:middle;
+}
+
+.regional-details__employment_stat-num {
+	height:gap(2); // 40px
+	padding:gap(0.4); //8px
+	color: #fff;
+	background: color("green");
+}
+
+.regional-details__employment_stat-bar {
+	margin-left:gap(2.4); // 48px
+}
+
+.regional-details__employment_stat-value {
+	// opacity:0;
+	// transition: opacity 0.25s;
+	// &[style] {
+	// 	opacity: 1;
+	// }
+}
+
+.regional-details__employment_stat {
+	margin-bottom:gap(0.5); // 10px
+	font-weight:bold;
+}
+
+.regional-details__related-links {
+	@extend h5;
+	line-height:gap(0.9); // 18px
+	li {
+		margin-bottom:gap(0.6); // 12px
+		margin-left:gap(-1); //20px
+	}
+}
+
+.regional-details__top-occupations {
+	// opacity:0;
+	// transition: opacity 0.25s;
+}

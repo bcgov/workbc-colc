@@ -1,0 +1,59 @@
+@model List<COLC.COLCWebsite.Models.InfoBoxes.InfoBoxesModels>
+
+@{
+    var bcNewcomers= from n in Model
+                     where n.Section == "newcomers"
+                     orderby n.SortOrder
+                     select n;
+
+    var bcResidents = from r in Model
+                      where r.Section == "residents"
+                      orderby r.SortOrder
+                      select r;
+
+    int bcNewcomersIndex = 1;
+    int bcResidentsIndex = 1;
+}
+<div class="bc-newcomers-and-residents panel hide-for-print">
+    <div class="panel-header--big bc-newcomers-and-residents__newcomer-title-wrap">
+        <h2>Useful information for B.C. newcomers</h2>
+    </div>
+    <div class="panel-content clearfix swipe" id="bc-newcomer-info">
+        <div class="swipe-wrap">
+            @foreach (var bcNewcomer in bcNewcomers)
+            {
+                <div class="bc-newcomers-and-residents__info-item lg-one-third lg-pull-left item-@bcNewcomersIndex">
+                    <div class="wrapper">
+                        <h3><a href="@bcNewcomer.LinkURL" target="_blank">@bcNewcomer.LinkText <span class="icon-link"></span></a></h3>
+                        <p>@bcNewcomer.LinkDescription</p>
+                    </div>
+                </div>
+
+                bcNewcomersIndex++;
+            }
+        </div>
+        <ol class="swipe-nav"><li class=""><a href="#">1</a></li><li><a  href="#">2</a></li><li class=""><a  href="#">3</a></li></ol>
+    </div>
+</div>
+
+<div class="bc-newcomers-and-residents panel hide-for-print">
+    <div class="panel-header--big bc-newcomers-and-residents__residents-title-wrap">
+        <h2>Useful information for B.C. residents</h2>
+    </div>
+    <div class="panel-content clearfix swipe" id="bc-resident-info">
+        <div class="swipe-wrap">
+            @foreach (var bcResident in bcResidents)
+            {
+                <div class="bc-newcomers-and-residents__info-item lg-one-third lg-pull-left item-@bcResidentsIndex">
+                    <div class="wrapper">
+                        <h3><a href="@bcResident.LinkURL" target="_blank">@bcResident.LinkText <span class="icon-link"></span></a></h3>
+                        <p>@bcResident.LinkDescription</p>
+                    </div>
+                </div>
+
+                bcResidentsIndex++;
+            }
+        </div>
+        <ol class="swipe-nav"><li class=""><a href="#">1</a></li><li><a href="#">2</a></li><li class=""><a href="#">3</a></li></ol>
+    </div>
+</div>

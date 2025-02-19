@@ -1,0 +1,25 @@
+/**
+ * Tuning Vendor Prefixes
+ * http://beta.compass-style.org/help/documentation/tuning-vendor-prefixes/
+ * http://beta.compass-style.org/reference/compass/support/
+ */
+
+$supported-browsers: (
+  "chrome",
+  "firefox",
+  "ie",
+  "safari",
+  "android",
+  "android-chrome",
+  "ie-mobile",
+  "ios-safari");
+$browser-minimum-versions: (
+  "chrome": "32",
+  "firefox": "27",
+  "ie": "8",
+  "safari": "6",
+  "android": "2.3",
+  "android-chrome": null,
+  "ie-mobile": "10",
+  "ios-safari": "7.0-7.1"
+);

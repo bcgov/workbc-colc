@@ -1,0 +1,59 @@
+.occupation-salary-container__occ{
+    @include bp(lg){
+      width: 160px;
+
+      // Expand the occupation field when neighbourhood is hidden
+      .locations-container[data-index="0"] & {
+        .noneighbourhoodlayout & {
+          width: 320px;
+        }
+      }
+    }
+
+    .no-svg & {
+      input#occupation{
+        padding: 10px;
+      }
+    }
+}
+
+.occupation-salary-container__sal{
+     @include bp(lg){
+      width: 150px;
+  }
+   input{
+      @include bp(lg){
+        width: 68%;
+      }
+      @include bp(md,only){
+        width: 95%;
+      }
+      width: 91%;
+    }
+   .icon-info{
+      @include bp(lg){
+        right: auto;
+      }
+      top: 16px;
+      right: 10px;
+
+    }
+    .tooltip.top {
+      margin-left: -55px;
+
+      .tooltip-arrow{
+          margin-left: 51px;
+      }
+    }
+    .tooltip-inner{
+      width: 200px;
+      //margin-left: -110px;
+    }
+}
+
+.occupation-salary-container{
+    input{
+        background-color: color("white");
+    }
+}
+

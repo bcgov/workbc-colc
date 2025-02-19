@@ -1,0 +1,49 @@
+<nav class="main-menu navbar-collapse collapse hide-for-print">
+    <div class="container">
+        <ul class="main-menu__list nav navbar-nav">
+            @if (@ViewBag.Skin == "workbc")
+			{
+				var root = "https://www.workbc.ca";
+
+				var links = new List<Tuple<string, string>>
+				{
+					Tuple.Create("Search and Prepare for a Job",        "/search-and-prepare-job"),
+					Tuple.Create("Plan a Career",                       "/plan-career"),
+					Tuple.Create("Discover Employment Services",        "/discover-employment-services"),
+					Tuple.Create("Explore Training and Education",      "/explore-training-and-education"),
+					Tuple.Create("Research the Labour Market",          "/research-labour-market"),
+					Tuple.Create("Access Employer Resources",           "/access-employer-resources"),
+					Tuple.Create("Find Loans and Grants",               "/find-loans-and-grants"),
+                };
+                foreach (var link in links)
+				{
+                    <li class="main-menu__item">
+					    <a href="@(root + link.Item2)" class="main-menu__link">@link.Item1</a>
+                    </li>
+                }
+			}
+			else
+			{
+                <li class="main-menu__item">
+                    <a href="http://www.welcomebc.ca/Choose-B-C" class="main-menu__link">Choose B.C.</a>
+                </li>
+                <li class="main-menu__item selected">
+                    <a href="http://www.welcomebc.ca/Immigrate-to-B-C" class="main-menu__link">Immigrate to B.C.</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="http://www.welcomebc.ca/Start-Your-Life-in-B-C" class="main-menu__link">Start Your Life in B.C.</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="http://www.welcomebc.ca/Work-or-Study-in-B-C" class="main-menu__link">Work or Study in B.C.</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="http://www.welcomebc.ca/Employer-Resources" class="main-menu__link">Employer Resources</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="http://www.welcomebc.ca/Resources-For" class="main-menu__link">Resources For</a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</nav>

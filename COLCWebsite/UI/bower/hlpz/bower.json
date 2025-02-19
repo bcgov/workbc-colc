@@ -1,0 +1,15 @@
+{
+  "name": "hlpz",
+  "version": "0.1.0",
+  "authors": [
+    "Thomas Hermann <thomas.hermann@fcv.ca>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

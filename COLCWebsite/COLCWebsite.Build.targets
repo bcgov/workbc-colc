@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      CopyDependencies;
+      <!--UIBuild;-->
+      AddUIBuildFiles;
+      $(BuildDependsOn);
+    </BuildDependsOn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <ConfigReplacement>Debug</ConfigReplacement>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <ConfigReplacement>Release</ConfigReplacement>
+    <sassCompileParams>--no-line-comments --output-style compressed</sassCompileParams>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Dependencies Include="$(MSBuildProjectDirectory)\..\Libraries\System.Data.SQLite.DLL" />
+    <Dependencies Include="$(MSBuildProjectDirectory)\..\Libraries\CustomTaggingModule.dll" />
+  </ItemGroup>
+
+  <Target Name="CopyDependencies">
+    <Copy SourceFiles="@(Dependencies)" DestinationFolder="$(OutDir)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
+  </Target>
+
+<!--
+  <Target Name="UIBuild">
+    <Message Text="Start UIBuild Target" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="grunt.bat -f"></Exec>
+  </Target> 
+  -->
+
+
+  <!-- ********************************************************************************************
+  Target: AddUIBuildFiles
+  Description: Target that ensures files produced by the UI build are included in the package.
+  -->
+  <Target Name="AddUIBuildFiles">
+    <ItemGroup>
+      <Content Include="UI*\filerev.json" />
+      <Content Include="UI*\**\*.js" Exclude="**\bower\**\*.js" />
+      <Content Include="UI*\**\*.css" Exclude="**\bower\**\*.css" />
+      <Content Include="UI*\**\*.png" Exclude="**\bower\**\*.png" />
+      <Content Include="UI*\**\*.jpg" Exclude="**\bower\**\*.jpg" />
+      <Content Include="UI*\**\*.gif" Exclude="**\bower\**\*.gif" />
+      <Content Include="UI*\images\**\*.ico" />
+      <Content Include="UI*\images\**\*.svg" />
+      <Content Include="UI*\images\grunticons\*.*" />
+      <Content Include="UI*\fonts\*.eot" />
+      <Content Include="UI*\fonts\*.woff" />
+      <Content Include="Views\**\*.js" />
+    </ItemGroup>
+  </Target>
+
+</Project>

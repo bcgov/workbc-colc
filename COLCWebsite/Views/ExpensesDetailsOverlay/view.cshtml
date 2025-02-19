@@ -1,0 +1,301 @@
+<div class="expenses-details">
+    <div class="overlay" data-overlay='{ "fixed": true }'>
+    @Html.Partial("~/Views/Overlay/header/view.cshtml")
+    <div class="expenses-details__header panel-header--big">
+        <h2 class="pad-right">Expenses details for:</h2>
+        <div class="expenses-details__compare">
+            <div class="expenses-details__single-city" rv-show="model:selectedScenarioIndex | eq index" rv-each-scenario="model:scenarios" >{scenario:LocationName}</div>
+            <button type="button" class="expenses-details__share" rv-show="model:selectedScenarioIndex | eq 1" rv-on-click="view.copyDetails">Copy from first city</button>
+        </div>
+        <button type="button" class="expenses-details__expand white"><span class="expenses-details__expand__expand">Expand all<span class="icon-expand icon-right"></span></span><span class="expenses-details__expand__collapse">Collapse all<span class="icon-collapse icon-right"></span></span></button>
+    </div>
+    <form class="expenses-details__form">
+        <div class="panel-header toggle" data-toggle='{ "collapsed": false }'>
+            <span class="legend housing"></span>
+            <h4>Monthly Housing &amp; Transportation</h4>
+            <span class="icon-right icon-expand-panel collapse-open"></span><span class="icon-right icon-collapse-panel collapse-close"></span>
+        </div>
+        <div class="expenses-details__content toggle-container">
+            <div class="expenses-details__form__section-container">
+                <div class="expenses-details__form__section--left">
+                    <div class ="expenses-details__field">
+                        <label for=" home-size">
+                        Home size</label>
+                        <select name="SqFtID" id="home-size" rv-value="model:scenario:SqFtID">
+                            <option value="1">Small Apartment (500 sq.ft.)</option>
+                            <option value="2">Two Bedroom Condo (900 sq.ft.)</option>
+                            <option value="3">Large Condo (1,200 sq.ft.)</option>
+                            <option value="4">Small House (1,500 sq.ft.)</option>
+                            <option value="5">Average House (2,000 sq. ft.)</option>
+                            <option value="6">Large House (2,500 sq.ft.)</option>
+                        </select>
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="rent-or-own">
+                            Rent or own
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="The estimated mortgage or rent cost is generated based on the size of the home selected above. The figure takes into account the down payment amount (in the case of a mortgage) and which location was selected.  You can enter your own value if you already know your expected cost."></span>
+                        </label>
+                        <select name="OwnIndicatorID" id="rent-or-own" rv-value="model:scenario:OwnIndicatorID">
+                            <option value="1">Rent</option>
+                            <option value="2">Own</option>
+                        </select>
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="down-payment">
+                            Down payment
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="If you know the down payment percentage you will apply to your new mortgage, you can enter the value below.  This value will have an effect on your estimated monthly mortgage payment."></span>
+                        </label>
+                        <select name="DownPaymentLevelID" id="down-payment" rv-value="model:scenario:DownPaymentLevelID" rv-disabled="model:scenario:isRenting">
+                            <option value="1" rv-if="model:scenario:isRenting">0%</option>
+                            <option value="2">20%</option>
+                            <option value="3">25%</option>
+                            <option value="4">30%</option>
+                            <option value="5">35%</option>
+                            <option value="6">40%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="expenses-details__form__section--right">
+                    <div class="expenses-details__field">
+                        <label for="transportation-type">Transportation type</label>
+                        <select name="TransportationType" id="transportation-type" rv-value="model:scenario:TransportationType">
+                            <option value="1">Car</option>
+                            <option value="2">Public transportation</option>
+                            <option value="3">Walk</option>
+                            <option value="4">Bike</option>
+                        </select>
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="no-of-vehicles">Number of vehicles</label>
+                        <select name="NumVehicles" id="no-of-vehicles" rv-value="model:scenario:NumVehicles" rv-disabled="model:scenario:hasNoCar">
+                            <option value="0" rv-if="model:scenario:hasNoCar">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="travel-day">Travel km/day</label>
+                        <select name="MileagePerYearID" id="travel-day" rv-value="model:scenario:MileagePerYearID">
+                            <option value="1">0 km daily (0 km each year)</option>
+                            <option value="2">6.4 km daily (2,336 km each year)</option>
+                            <option value="3">14.5 km daily (5,292.5 km each year)</option>
+                            <option value="4">30.6 km daily (11,169 km each year)</option>
+                            <option value="5">80.5 km daily (29,382.5 km each year)</option>
+                            <option value="6">120.7 km daily (44,055.5 km each year)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="expenses-details__view-more toggle"><span class="view-text">View more</span><span class="hide-text">Hide</span><span> options
+                        @if (@ViewBag.Skin == "workbc")
+                        {
+                            @:<span class="icon-chevron-black-small"></span></span>
+                        }
+                        else
+                        {
+                            @:<span class="icon-chevron"></span>
+                        }
+                </span>
+            </div>
+            <div class="expenses-details__view-more-content toggle-container">
+                <div class="expenses-details__form__section-container">
+                    <div class="expenses-details__form__section--left">
+                        <div class="expenses-details__field">
+                            <label for="monthly-property-tax">Property tax ($)</label>
+                            <input type="text" id="monthly-property-tax" name="PropertyTaxAmount" required rv-live-value="model:scenario:PropertyTaxAmount | currency" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10" rv-disabled="model:scenario:isRenting">
+                        </div>
+                        <div class="expenses-details__field">
+                            <label for="monthly-house-maintenance">House maintenance ($)</label>
+                            <input type="text" id="monthly-house-maintenance" name="HouseMaintainanceAmount" rv-live-value="model:scenario:HouseMaintainanceAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10" rv-disabled="model:scenario:isRenting">
+                        </div>
+                    </div>
+
+                    <div class="expenses-details__form__section--right">
+                        <div class="expenses-details__field">
+                            <label for="monthly-home-insurance">Home insurance ($)</label>
+                            <input type="text" id="monthly-home-insurance" name="HomeInsuranceAmount" rv-live-value="model:scenario:HomeInsuranceAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+
+                        <div class="expenses-details__field">
+                            <label for="monthly-car-insurance">Car insurance ($)</label>
+                            <input type="text" id="monthly-car-insurance" name="CarInsuranceAmount" rv-live-value="model:scenario:CarInsuranceAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10" rv-disabled="model:scenario:hasNoCar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-header toggle even">
+            <span class="legend living"></span>
+            <h4>Monthly Living &amp; Personal</h4>
+             <span class="icon-right icon-expand-panel collapse-open"></span><span class="icon-right icon-collapse-panel collapse-close"></span>
+        </div>
+        <div class="expenses-details__content toggle-container">
+            <div class="expenses-details__form__section-container">
+                <div class="expenses-details__form__section--left">
+                    <div class="expenses-details__field">
+                        <label for="number-of-adults">Number of adults</label>
+                        <select name="NumAdults" id="number-of-adults" rv-value="model:scenario:NumAdults">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="expenses-details__field">
+                        <label for="second-annual-income">
+                            Second annual income ($)
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="If you have two income earners in your family, enter the second annual income here."></span>
+                        </label>
+                        <input type="text" id="second-annual-income" name="Salary2" rv-live-value="model:scenario:Salary2 | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10" rv-disabled="model:scenario:isOneAdult">
+                    </div>
+                </div>
+                <div class="expenses-details__form__section--right">
+                    <div class="expenses-details__field">
+                        <label for="number-of-children">Number of children/dependents</label>
+                        <select name="NumChildren" id="number-of-children" rv-value="model:scenario:NumChildren">
+                            <option value="0">None</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="expenses-details__view-more toggle"><span class="view-text">View more</span><span class="hide-text">Hide</span><span>
+            options
+                        @if (@ViewBag.Skin == "workbc")
+                        {
+                            @:<span class="icon-chevron-black-small"></span>
+                        }
+                        else
+                        {
+                        @:<span class="icon-chevron"></span>
+                        }
+                </span>
+            </div>
+            <div class="expenses-details__view-more-content toggle-container">
+                <div class="expenses-details__form__section-container">
+                    <div class="expenses-details__form__section--left">
+                        <div class="expenses-details__field">
+                            <label for="food">
+                                Food ($)
+                            </label>
+                            <input type="text" id="food" name="FoodAmount" rv-live-value="model:scenario:FoodAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+                        <div class="expenses-details__field">
+                            <label for="entertainment">
+                                Entertainment ($)
+                            </label>
+                            <input type="text" id="entertainment" name="EntertainmentAmount" rv-live-value="model:scenario:EntertainmentAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+                        <div class="expenses-details__field">
+                            <label for="life-insurance">Life insurance ($)</label>
+                            <input type="text" id="life-insurance" name="LifeInsuranceAmount" rv-live-value="model:scenario:LifeInsuranceAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+                        <div class="expenses-details__field">
+                            <label for="pets">Pets ($)</label>
+                            <input type="text" id="pets" name="PetsAmount" rv-live-value="model:scenario:PetsAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+                    </div>
+
+                    <div class="expenses-details__form__section--right">
+                        <div class="expenses-details__field">
+                            <label for="clothing">Clothing ($)</label>
+                            <input type="text" id="clothing" name="ClothingAmount" rv-live-value="model:scenario:ClothingAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+
+                        <div class="expenses-details__field">
+                            <label for="fitness">Fitness ($)</label>
+                            <input type="text" id="fitness" name="FitnessAmount" rv-live-value="model:scenario:FitnessAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+
+                        <div class="expenses-details__field">
+                            <label for="grooming">Grooming ($)</label>
+                            <input type="text" id="grooming" name="GroomingAmount" rv-live-value="model:scenario:GroomingAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-header toggle">
+            <span class="legend savings"></span>
+            <h4>Monthly Savings &amp; Finance (optional)</h4>
+            <span class="icon-right icon-expand-panel collapse-open"></span><span class="icon-right icon-collapse-panel collapse-close"></span>
+        </div>
+        <div class="expenses-details__content toggle-container">
+            <div class="expenses-details__form__section-container">
+                <div class="expenses-details__form__section--left">
+                   <div class="expenses-details__field">
+                        <label for="outstanding-loan-payments">
+                            Outstanding loan payments ($)
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="If you have existing loans (personal loans, student loans, credit cards, etc...) you can enter your total expected monthly payment(s) in this field."></span>
+                        </label>
+                        <input type="text" id="outstanding-loan-payments" name="OutstandingLoanPaymentsAmount" rv-live-value="model:scenario:OutstandingLoanPaymentsAmount | currency" required data-rule-mincomma="0" data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="retirement-savings-plan">
+                            Retirement Savings Plan ($)
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="Are you contributing to a retirement savings plan? If so, enter your monthly contribution here."></span>
+                        </label>
+                        <input type="text" id="retirement-loan-payments" name="RRSPAmount" rv-live-value="model:scenario:RRSPAmount | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                    </div>
+
+                    <div class="expenses-details__field">
+                        <label for="registered-education-savings-plan">
+                            Registered Education Savings Plan ($)
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="If you have dependents that are planning on attending post-secondary education, and you have setup a Registered Education Savings Plan to help them pay for their education costs, you can enter your expected monthly contribution in this field."></span>
+                        </label>
+                        <input type="text" id="registered-education-savings-plan" name="RESP" rv-live-value="model:scenario:RESP | currency" required data-msg-required="Please enter a valid number." data-rule-mincomma="0" data-rule-mincomma="0" data-msg-mincomma="Please enter a valid number." data-rule-maxlength="10">
+                    </div>
+
+                </div>
+                <div class="expenses-details__form__section--right">
+                    <div class="expenses-details__field">
+                        <label for="savings">
+                            Savings
+                            <span class="icon-right icon-info" data-tooltip data-placement="top" title="Do you put away a certain percentage of your monthly income into a bank account or Tax Free Savings Account?  If so, select the estimated percentage of your monthly contribution in this field."></span>
+                        </label>
+                        <select name="SavingsAmount" id="savings" rv-value="model:scenario:SavingsAmount">
+                            <option value="0">0%</option>
+                            <option value="5">5%</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                        </select>
+                    </div>
+                    <div class="expenses-details__field">
+                    <label for="investment">
+                        Investment
+                        <span class="icon-right icon-info" data-tooltip data-placement="top" title="If you invest a certain percentage of your monthly income, select the percentage below to factor this amount into the calculation."></span>
+                    </label>
+                    <select name="InvestmentAmount" id="investment" rv-value="model:scenario:InvestmentAmount">
+                        <option value="0">0%</option>
+                        <option value="5">5%</option>
+                        <option value="10">10%</option>
+                        <option value="15">15%</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expenses-details__tools">
+            <button type="button" class="expenses-details__submit boxed--bigger">
+                Calculate
+                @if (@ViewBag.Skin == "workbc")
+                {
+                    <span class="icon-right icon-chevron-circle"></span>
+                }
+            </button>
+            <button type="button" class="expenses-details__reset">Reset all</button>
+        </div>
+    </form>
+    @Html.Partial("~/Views/Overlay/footer/view.cshtml")
+    </div>
+</div>

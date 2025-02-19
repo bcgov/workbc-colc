@@ -1,0 +1,63 @@
+.overview__intro {
+  @include bp(sm,to,md) {
+    padding-left:20px; padding-right: 20px;
+  }
+}
+.overview__titles{
+  @include bp(sm,to,md){
+    background-image:url("../UI/images/WBC-COLC-Banner-3.jpg");
+    background-size: cover;
+    padding:gap();
+  }
+}
+
+.overview__salary{
+  margin-top:gap();
+    @include bp(sm,to,md){
+    	margin-top:0px;
+    }
+}
+.overview__form { 
+   input, select, textarea, .form-select span, span.tt-dropdown-menu, span.tt-dropdown-menu * {  color:color("welcome-field");  }
+   input::placeholder { color:color("welcome-field");  }
+   input:-ms-input-placeholder{ color:color("welcome-field");  }
+}
+// .overview__compare__btn{
+//   color: color("orange");
+//   font-size: 13px;
+// }
+
+// .overview__required-text{
+//   @include bp(lg) {
+//       display: inline-block;
+//       font-size: 14px;
+//       top: 10px;
+//       position: relative;
+//       right: -50px;
+//   }
+
+//   @include bp(sm,to,md){
+//     display: block;
+//     font-size: 14px;
+//     margin-top: 10px;
+//     position: static;
+
+//   }
+// }
+.overview__submit{
+    // margin-top: 4px;
+
+  	@include bp(sm,to,md){
+    	margin-top:25px;
+    }
+
+  	// @include bp(lg,only){
+   //    width: 110px
+   //  }
+}
+
+.boxed {
+  @include bp(lg) {
+    width: 150px;
+  }
+}

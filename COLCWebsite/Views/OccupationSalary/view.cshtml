@@ -1,0 +1,11 @@
+@model List<COLC.COLCWebsite.Models.OccupationSalary.OccupationSalaryModels>
+
+<div class="occupation-salary-container clearfix" data-nocs='@Html.Raw(Json.Encode(Model))'>
+    <div class="occupation-salary-container__occ pull-left pad-right">
+        <input type="text" id="occupation" name="occupation" placeholder="Occupation" rv-value="model:occupation" />
+    </div>
+    <div class="occupation-salary-container__sal pull-left">
+        <input type="text" id="salary" name="Salary1" placeholder="Salary ($) *" required rv-live-value="model:salary | currency true" data-rule-mincomma="1" data-msg-mincomma="Please enter a valid number above 0." data-rule-maxlength="11"/>
+        <span class="icon-right icon-info" data-tooltip="" data-placement="top" title="" data-original-title="Select an occupation to automatically complete this field. If you know your actual salary, or if you have more than one job, enter your total income (before taxes) into this field."></span>
+    </div>
+</div>

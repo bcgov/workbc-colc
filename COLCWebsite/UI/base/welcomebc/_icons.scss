@@ -1,0 +1,89 @@
+[class*="icon-"] {
+  display: inline-block;
+  background-size: contain;
+}
+.icon-middle-align{
+  vertical-align: middle;
+  margin-top:-5px;
+}
+.icon-right {
+  margin-right:-10px;
+  margin-left:10px;
+}
+.icon-left {
+  margin-right: 5px;
+  @media (min-width: 980px) {
+    margin-left:-10px;
+    margin-right: 10px;
+  }
+}
+.icon-bar-graph {
+  width:26px;
+  height:20px;
+  @extend .icon-middle-align;
+}
+.icon-bc-jobsplan {
+  width:130px;
+  height:45px;
+}
+.icon-chevron {
+  width:6px;
+  height:9px;
+}
+.icon-close {
+  width:30px;
+  height:30px;
+}
+.icon-expand, .icon-info, .icon-collapse, .icon-info-white {
+  width:20px;
+  height:20px;
+  @extend .icon-middle-align;
+}
+
+.icon-map-pin, .icon-map-pin-black, .icon-mapoverlay-map-pin, .icon-map-pin-google {
+  width: 10px;
+  height: 16px;
+  @extend .icon-middle-align;
+}
+
+.icon-map-pin-circle{
+  width:32px;
+  height:32px;
+  @extend .icon-middle-align;
+}
+.icon-orange-triangle-link, .icon-link{
+  width:6px;
+  height:10px;
+}
+.icon-pie-chart{
+  width:25px;
+  height:25px;
+  @extend .icon-middle-align;
+}
+.icon-remove{
+  width:14px;
+  height:14px;
+  @extend .icon-middle-align;
+}
+.icon-Welcome-BC{
+  width:220px;
+  height:55px;
+}
+.icon-bc-logo-footer{
+  width:191px;
+  height:50px;
+}
+.icon-expand-panel, .icon-collapse-panel{
+  width:11px;
+  height:6px;
+}
+.icon-welcomebc-header-logo {
+  width:400px;
+  height:50px;
+}
+
+.icon-chevron-white-small, .icon-chevron-black-small, .icon-chevron-blue-small {
+  width: 8px;
+  height: 12px;
+  @extend .icon-middle-align;
+}

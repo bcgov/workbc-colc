@@ -1,0 +1,82 @@
+.occupation-salary-container {
+    float: left;
+    @include bp(sm,to,md){
+        width: 100%;
+    }
+}
+
+.tt-dropdown-menu{
+    width: 320px;
+    padding:0 gap(1/4);
+    border: 1px solid color("black");
+    background: color("white");
+    cursor:pointer;
+    div div{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+.occupation-salary-container__occ ,.occupation-salary-container__sal, .twitter-typeahead{
+    @include bp(sm,to,md){
+        width: 100%;
+        padding-right: 0px;
+    }
+}
+.occupation-salary-container__occ ,.occupation-salary-container__sal{
+    @include bp(sm,to,md){
+        margin-top: 25px;
+    }
+}
+.occupation-salary-container__occ {
+    .twitter-typeahead {
+        width: 100%;
+    }
+
+    input#occupation{
+        padding:7px 10px 8px;
+
+        @include bp(sm,to,md){
+            padding: gap(1/2)
+        }
+    }
+}
+
+.occupation-salary-container__sal {
+    position: relative;
+    @include bp(lg){
+        label.error {
+            position: absolute;
+        }
+    }
+
+    .icon-info{
+        position: absolute;
+        z-index: 20;
+    }
+}
+
+// Typeahead.js
+.tt-dropdown-menu {
+    z-index: 140 !important; // the default 100 z-index is not high enough
+
+    h3, h4 {
+        font-size: 16px;
+        color: #25272b;
+        font-weight: normal;
+        display: block;
+        margin: 1em 0 1em;
+    }
+
+    h3 {
+        padding-top: 1em;
+        border-top: 1px solid #999;
+    }
+
+    max-height: 400px;
+    overflow-y: scroll;
+
+    @include bp(sm,to,md){
+        max-width: 100%;
+    }
+}

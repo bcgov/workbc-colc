@@ -1,0 +1,32 @@
+@include bp(lg) {
+    .locations-container__region{
+        width:160px;
+    }
+
+    .locations-container__city{
+        width:160px;
+    }
+
+    .locations-container__nbhd{
+        width:160px;
+    }
+}
+
+// .locations-container__map-btn{
+//   color: color("orange");
+//   font-size: 13px;
+// }
+
+.locations-container__remove-btn {
+    font-weight: bold;
+    top:8px;
+    right: -75px;
+    color: color('white');
+    @include bp(sm,to,md){
+      top:auto;
+      right:auto;
+      left:0;
+      bottom:-35px;
+      color: color('welcome-blue');
+    }
+}

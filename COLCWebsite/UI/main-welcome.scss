@@ -1,0 +1,20 @@
+$env: 'welcomebc';
+
+@import "lib/_lib";
+@import "base/welcomebc/_base";
+
+@import "_universal-styles";
+
+@import '../Views/Home/styles-welcome';
+@import '../Views/Menu/styles-welcome';
+@import '../Views/Footer/styles-welcome';
+@import '../Views/Locations/styles-welcome';
+@import '../Views/OccupationSalary/styles-welcome';
+@import '../Views/Overview/styles-welcome';
+@import '../Views/Overlay/styles-welcome';
+@import '../Views/ExpensesCharts/styles-welcome';
+@import '../Views/ExpensesDetailsOverlay/styles-welcome';
+@import '../Views/RegionalDetails/styles-welcome';
+@import '../Views/InfoBoxes/styles-welcome';
+@import '../Views/GoogleMap/styles-welcome';
+@import '../Views/MapOverlay/styles-welcome';

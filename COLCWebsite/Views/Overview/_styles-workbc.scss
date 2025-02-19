@@ -1,0 +1,55 @@
+.overview__intro {
+  @include bp(sm,to,md) {
+    padding-left:20px; padding-right: 20px;
+  }
+}
+.overview__form { 
+   input, select, textarea, .form-select span, span.tt-dropdown-menu, span.tt-dropdown-menu * {  color:color("welcome-blue");  }
+   input::placeholder { color:color("welcome-blue");  }
+   input:-ms-input-placeholder{ color:color("welcome-blue");  }
+}
+
+.overview__salary{
+  @include bp(lg) {
+    margin-top:gap(3/4);
+  }
+}
+.overview__compare__btn{
+  color: color("blueDark");
+  @include bp(sm,to,md) {
+    //color: color("black");
+  }
+  font-size:16px;
+  padding-left:0px;
+  .icon-chevron-white-small{
+    margin-top:-2px;
+    @include bp(sm,to,md) {
+      display: none;
+    }
+  }
+  .icon-chevron-black-small{
+    margin-top:-2px;
+    @include bp(lg) {
+      display: none;
+    }
+  }
+}
+.overview__required-text {
+  color: color("blueDark");
+}
+
+.boxed {
+  @include bp(lg) {
+    width: 150px;
+  }
+}
+
+.boxed--bigger{
+        padding-top: 13px;
+        padding-bottom: 13px;
+    @include bp(sm,to,md){
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 16px;
+    }
+}

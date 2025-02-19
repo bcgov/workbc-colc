@@ -1,0 +1,17 @@
+/.vs
+/ColcBusinessLayerWcfService/bin
+/ColcBusinessLayerWcfService/.vs
+/ColcBusinessLayerWcfService/obj
+/ColcDataLayerWcfService/bin
+/ColcDataLayerWcfService/obj
+/COLCWebsite/bin
+/COLCWebsite/node_modules
+/COLCWebsite/node_modules1
+/COLCWebsite/obj
+/COLCWebsite/publish
+/EDMEntities/obj
+/EDMEntities/bin
+/ColcDataLayerWcfService/.vs
+/packages
+COLCWebsite/Web-Dev.refconfig
+COLCWebsite/Web-Test.refconfig

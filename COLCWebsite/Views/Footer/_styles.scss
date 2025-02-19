@@ -1,0 +1,94 @@
+/* Footer: shared styles */
+
+footer{
+	overflow: auto;
+	background-color: color('blueDark');
+	color: color("white");
+	font-size: 14px;
+}
+
+.copyright {
+	background-color: color('white');
+	@include clearfix;
+	color: color("bodyText");
+	padding: gap(1) gap() gap(3/2);
+	@include bp(lg) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.footer-menu__list{
+  @include min-list;
+  padding: gap();
+  @include bp(lg) {
+  	padding: gap(3/2) 0;
+  }
+  .no-svg &{
+    @extend %clearfix;
+  }
+}
+
+a.footer-menu__link {
+  color: color("white");
+}
+
+.footer-menu__item{
+ 	display:inline-block;
+	& + .footer-menu__item:before{
+  		content: " | ";
+    	padding: 0 3px;
+  	}  	
+}
+
+.page-footer__copyright-text {
+	margin-top:0;
+	@include bp(lg) {
+		float:left;
+		margin-top:gap(0.75);
+	}
+}
+
+.page-footer-logo {
+	display: block;
+    float: right;
+    margin-top: 0;
+    @include bp(sm,to,md) {
+    	float: none;
+		text-align: center;
+		margin-top: 32px;
+	}
+}
+
+.page-footer__logos {
+	margin-top:gap();
+	margin-left:gap();
+	margin-right:gap();
+	[class^="icon-"] {
+		vertical-align: middle;
+	}
+	.icon-bc-logo-footer {
+		height:24px;
+		width: 91px;
+	}
+	.icon-WorkBC-logo {
+		height: 21px;
+		width: 93px;
+	}
+	.icon-bc-jobsplan {
+		height:24px;
+		width: 71px;
+	}
+}
+
+@media print {
+	.page-footer__copyright-text {
+		margin: 0;
+	}
+
+    footer{ bottom:15px; } 
+    .copyright { 
+		padding-bottom:20px;  color: color("black"); 
+        p {font-size:8px; }
+	}
+}

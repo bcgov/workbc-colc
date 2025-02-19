@@ -1,0 +1,129 @@
+/* Menu: Welcome BC */
+
+.main-menu {
+  background-color:color("welcome-bg");
+  @include bp(lg) {
+    max-width: none;
+  }
+}
+
+.main-menu__list {
+  min-height: 70px;
+}
+
+
+
+.main-menu__link.selected {
+  background-color:color("work-bg");
+  color:color("blueDark");
+  a:hover {
+      //color:color("blueDark"); 
+  }
+}
+
+a.main-menu__link {
+  @include bp(lg) {
+    min-height: 70px;
+  }
+}
+
+.head-container {
+  @include bp(sm,to,md) {
+    border-bottom:5px solid color('welcome-bg');
+		.icon-welcomebc-logo {
+			// height:23px;
+			// width:101px;
+			// margin-top:13px;
+      height: 30px;
+      width: 217px;
+      margin-left: 20px;
+		}
+	}
+	@include bp(lg) {
+		.icon-welcomebc-logo {
+			width: 400px;
+      height: 47px;
+      vertical-align: middle;
+		}
+	}
+}
+
+// .head-container {
+//   @include bp(sm,to,md) {
+//     background-color:color("blue-menu");
+//   }
+// }
+
+// .icon-bc-jobsplan{
+//   margin-left:gap();
+//   @include bp(lg) {
+//     margin-left:gap(2); //40px;
+//   }
+// }
+
+// .main-menu {
+//   @include bp(sm,to,md) {
+//     background-color:color("blue-menu");
+//   }
+//   @include bp(lg) {
+//     margin-top:gap(3);
+//   }
+// }
+
+// .main-menu__list {
+//   @include bp(lg) {
+//     border-bottom: 2px solid #e3a31c;
+//   }
+// }
+
+// .main-menu__item {
+//   @include bp(lg) {
+//     width:220px;
+//     margin-left:gap();
+//     @include border-top-radius(5px);
+//     background-color: color("orange");
+//     background-color: #f0c804;
+//     @include background-image(linear-gradient(top, #f0c804 0%,#e7b121 37%,#e3a62b 60%,#e3a320 100%));
+//     border: 1px solid #ebc038;
+//     border-bottom:none;
+//     text-align: center;
+//     .no-svg & {
+//       @include filter-gradient(#f0c804, #e3a320, vertical);
+//       $experimental-support-for-svg: true;
+//     }
+//     &:first-child{
+//       margin-left: 0;
+//     }
+//     &:hover{
+//       background-color: orange;
+//     }
+//     &.selected{
+//       border: 1px solid #6c88bd;
+//       border-bottom:none;
+//       background-color: #335fb0;      
+//       @include background-image(linear-gradient(top,  #335fb0 0%,#2f579f 31%,#2a4d8d 62%,#274883 100%));
+//       .no-svg & {
+//         @include filter-gradient(#335fb0, #274883, vertical);
+//         $experimental-support-for-svg: true;
+//       }
+//       &:after{
+//         content: "";
+//         position: absolute;
+//         display: block;
+//         background-color:#274883;
+//         width: 218px;
+//         height: 3px;
+//       }
+//     }
+//   }
+// }
+
+
+// a.main-menu__link {
+//     text-shadow:0px 1px 0px color("black");
+//     @include border-top-radius(5px);
+//   @include bp(lg) {
+//     font-size: 30px;
+//     font-weight: 700;
+//   }
+// }

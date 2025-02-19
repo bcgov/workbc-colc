@@ -1,0 +1,83 @@
+.layout-container {
+  @extend %container;
+  padding-top: gap();
+  padding-bottom: gap();
+  position: relative;
+}
+
+
+.layout-content {
+  @include bp(sm, only) {
+    padding: 0 gap();
+  }
+}
+
+.panel{
+  margin-top:45px;
+}
+
+.panel-header{
+  background-color: color("blue-menu");  
+  padding:gap(1/2) 25px;
+  @extend %clearfix; 
+  h2,h4{
+    color: color("white");
+  }
+}
+
+.panel-header--big{
+  @extend .panel-header;
+  padding:gap(); 
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.panel-content{
+  background-color: color("grey-panel");
+  padding: gap();
+}
+
+.regional-details .panel-content {
+  background-color: color("grey-panel");
+}
+
+.legend{
+  width:gap(1/2);
+  display: inline-block;  
+  border-top: solid 10px #fff;
+  margin-right:gap(1/2);
+  padding-bottom: 1px;
+  &.bar1{
+    border-top-color: color("welcome-blue");
+  }
+  &.bar2{
+    border-top-color: color("tax-welcome");
+  }
+  &.housing{
+    border-top-color: color("housing-welcome");
+  }
+  &.savings{
+    border-top-color: color("savings-welcome");
+  }
+  &.living{
+    border-top-color: color("living-welcome");
+  }
+  &.tax{
+    border-top-color: color("tax-welcome");
+  }
+}
+
+.legend--right {
+  @extend .legend;
+  margin-left: 10px;
+  width:gap(3/4);  
+  border-top-width: 15px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+
+.locations-container .form-select {
+  background-color: color("grey-bg");
+}

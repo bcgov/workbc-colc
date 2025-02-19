@@ -1,0 +1,66 @@
+@model List<COLC.COLCWebsite.Models.Locations.LocationsModels>
+<div id="locationsData" data-locations-data='@Html.Raw(Json.Encode(Model))'></div>
+<div rv-each-locationset="model:locationSets" class="overview__locations_container">
+	<div class="locations-container clearfix" rv-odc-locations="model:locationSets" rv-data-index="index">
+		<div class="locations-container__region pull-left pad-right">
+			<select name="RegionID[]" class="locations-region" rv-value="locationset:region" rv-data-test="locationset:region">
+				<option value="" selected>Region</option>
+				@* for loop *@
+				@*
+				<option value=""></option> *@
+				@* end for loop *@
+				<option value="2">Cariboo</option>
+				<option value="3">Kootenay</option>
+				<option value="4">Mainland/Southwest</option>
+				<option value="5">North Coast & Nechako</option>
+				<option value="6">Northeast</option>
+				<option value="7">Thompson-Okanagan</option>
+				<option value="8">Vancouver Island/Coast</option>
+			</select>
+		</div>
+
+		<div class="locations-container__city pull-left pad-right">
+
+			<select class="locations-city" required rv-name="'locations-city-{0}' | format index" rv-value="locationset:city">
+				<option value="" selected>City *</option>
+			</select>
+
+		</div>
+
+		<div class="locations-container__nbhd pull-left pad-right">
+			<select class="locations-neighbourhood" rv-value="locationset:neighbourhood">
+				<option value="" selected>Neighbourhood</option>
+			</select>
+		</div>
+
+		<button class="locations-container__remove-btn" rv-on-click="view.removeLocationSet" type="button" rv-if="index | gt 0">
+			<span class="icon-remove icon-left"></span>Remove
+		</button>
+
+		<input type="hidden" class="location-id" name="LocationID[]" />
+		<input type="hidden" class="location-name" rv-value="locationset:cityName" />
+
+		<div class="overview__locations__salary" rv-if="index | eq 0">
+			@Html.Action("OccupationSalaryPartial", "OccupationSalary")
+		</div>
+
+		<button type="button" class="overview__submit boxed" value="Recalculate" rv-on-click="view.enterExpenses">
+			<span class="label add">Add</span><span class="label edit">Edit</span> expenses
+			@if (@ViewBag.Skin == "workbc")
+			{
+				<span class="icon-right icon-chevron-circle"></span>
+			}
+		</button>
+	@*Show "View Interactive Map" button*@
+		@*<button type="button" class="show-map locations-container__map-btn" rv-on-click="view.showMap">
+			<span class="icon-map-pin icon-left"></span>View interactive map
+		</button>*@
+		
+	@*Hide "View Interactive Map" button*@
+		<button type="button" style="color:transparent" disabled class="show-map locations-container__map-btn" rv-on-click="view.showMap">
+			<span class="icon-map-pin icon-left" style="display:none"></span>View interactive map
+		</button>
+
+	</div>
+
+</div>

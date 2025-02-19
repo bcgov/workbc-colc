@@ -1,0 +1,9 @@
+# Ignore paths
+*.css
+*.map
+*.sublime-workspace
+.sass-cache
+/dist
+node_modules
+grunticons
+icons_min

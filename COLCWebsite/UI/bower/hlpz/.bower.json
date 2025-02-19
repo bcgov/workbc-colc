@@ -1,0 +1,24 @@
+{
+  "name": "hlpz",
+  "version": "0.2.0",
+  "authors": [
+    "Thomas Hermann <thomas.hermann@fcv.ca>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.0",
+    "commit": "2ac7074951974cf0583fc6813197e6e85ba6c8fd"
+  },
+  "_source": "git@gitlab.fcv.ca:interface/hlpz.git",
+  "_target": "0.2.0",
+  "_originalSource": "git@gitlab.fcv.ca:interface/hlpz.git"
+}

@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28B6A8FE-81C7-4D99-BE17-E5A4A5BB7B51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDMEntities</RootNamespace>
+    <AssemblyName>EDMEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlueprintBuilder\Constants.cs" />
+    <Compile Include="BlueprintBuilder\Models\CareerCompassResult.cs" />
+    <Compile Include="BlueprintBuilder\Models\CareerSuggestion.cs" />
+    <Compile Include="BlueprintBuilder\Models\Category.cs" />
+    <Compile Include="BlueprintBuilder\Models\CareerIndustry.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\CareerCompassResultMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\CareerSuggestionMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Blueprint.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\BlueprintMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\CategoryMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\CareerIndustryMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\ResourceMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\ToolMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\EmailTemplateMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\NotificationMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Mapping\UserMap.cs" />
+    <Compile Include="BlueprintBuilder\Models\Resource.cs" />
+    <Compile Include="BlueprintBuilder\Models\Tool.cs" />
+    <Compile Include="BlueprintBuilder\Models\EmailTemplate.cs" />
+    <Compile Include="BlueprintBuilder\Models\Notification.cs" />
+    <Compile Include="BlueprintBuilder\Models\User.cs" />
+    <Compile Include="COLC\Models\COLC_ConsumableHealthExpense.cs" />
+    <Compile Include="COLC\Models\COLC_DownPaymentLevel.cs" />
+    <Compile Include="COLC\Models\COLC_HousingExpense.cs" />
+    <Compile Include="COLC\Models\COLC_Location.cs" />
+    <Compile Include="COLC\Models\COLC_LocationType.cs" />
+    <Compile Include="COLC\Constants.cs" />
+    <Compile Include="COLC\Models\COLC_MileagePerYear.cs" />
+    <Compile Include="COLC\Models\COLC_Occupation.cs" />
+    <Compile Include="COLC\Models\COLC_OwnIndicator.cs" />
+    <Compile Include="COLC\Models\COLC_RegionalDetail.cs" />
+    <Compile Include="COLC\Models\COLC_SalaryLevel.cs" />
+    <Compile Include="COLC\Models\COLC_SqFtLevel.cs" />
+    <Compile Include="COLC\Models\COLC_Tax.cs" />
+    <Compile Include="COLC\Models\COLC_TaxType.cs" />
+    <Compile Include="COLC\Models\COLC_TransportationExpense.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_ConsumableHealthExpenseMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_DownPaymentLevelMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_HousingExpenseMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_LocationMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_LocationTypeMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_MileagePerYearMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_OccupationMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_OwnIndicatorMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_RegionalDetailMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_SalaryLevelMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_SqFtLevelMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_TaxMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_TaxTypeMap.cs" />
+    <Compile Include="COLC\Models\Mapping\COLC_TransportationExpenseMap.cs" />
+    <Compile Include="FilteredDbSet.cs" />
+    <Compile Include="Filters\IFilter.cs" />
+    <Compile Include="Models\CareerProfileBecomingQualified.cs" />
+    <Compile Include="Models\CareerLicensing.cs" />
+    <Compile Include="Models\CareerProfile.cs" />
+    <Compile Include="Models\CareerProfileCareerTrekVideos.cs" />
+    <Compile Include="Models\CareerProfileInYourLanguage.cs" />
+    <Compile Include="Models\CareerProfileSkill.cs" />
+    <Compile Include="Models\CareerProfileSkillDefinition.cs" />
+    <Compile Include="Models\CareerProfileWorkRelatedSkill.cs" />
+    <Compile Include="Models\CareerProfileWorkRelatedSkillsFile.cs" />
+    <Compile Include="Models\CareerProfileWorkRelatedSkillsSource.cs" />
+    <Compile Include="Models\Custom\JobUnemploymentOutlook.cs" />
+    <Compile Include="Models\Custom\RegionalEmploymentPercentageAllOccupationsView.cs" />
+    <Compile Include="Models\DataViewCareerProfileForecastedEmployment.cs" />
+    <Compile Include="Models\DataViewCareerProfileJobOpeningsOutlook.cs" />
+    <Compile Include="Models\DataViewCareerProfileJobUnemploymentOutlook.cs" />
+    <Compile Include="Models\DataViewCareerProfileRegionalOutlook.cs" />
+    <Compile Include="Models\DataViewTopHealthOccupation.cs" />
+    <Compile Include="Models\DataViewTopLNGOccupation.cs" />
+    <Compile Include="Models\EDM_EduPlannerField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\EDM_EduPlannerNoc.cs" />
+    <Compile Include="Models\EDM_EduPlannerSubjectArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\FYF_Ability.cs" />
+    <Compile Include="Models\FYF_CareerQuizAnswer.cs" />
+    <Compile Include="Models\FYF_CareerQuizQuestion.cs" />
+    <Compile Include="Models\FYF_LogQuizCareerQuizResult.cs" />
+    <Compile Include="Models\FYF_LogQuizIndustryResult.cs" />
+    <Compile Include="Models\FYF_WorkPreference.cs" />
+    <Compile Include="Models\Mapping\CareerLicensingMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileBecomingQualifiedMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileCareerTrekVideosMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileInYourLanguageMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileSkillDefinitionMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileWorkedRelatedSkillsSourceMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileWorkRelatedSkillMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileWorkRelatedSkillsFileMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileForecastedEmploymentMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileJobOpeningsOutlookMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileJobUnemploymentOutlookMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileRegionalOutlookMap.cs" />
+    <Compile Include="Models\Mapping\DataViewTopHealthOccupationMap.cs" />
+    <Compile Include="Models\Mapping\DataViewTopLNGOccupationMap.cs" />
+    <Compile Include="Models\Mapping\DemographicsAgeGroup.cs" />
+    <Compile Include="Models\Mapping\DemographicsLanguage.cs" />
+    <Compile Include="Models\Mapping\DemographicsPopulation.cs" />
+    <Compile Include="Models\Mapping\DemographicsProjectedParticipation.cs" />
+    <Compile Include="Models\Mapping\DemographicsProjectedPopulation.cs" />
+    <Compile Include="Models\Mapping\DemographicsRegionPopulation.cs" />
+    <Compile Include="Models\Mapping\DemographicsReportContent.cs" />
+    <Compile Include="Models\Mapping\DemographicsReportMap.cs" />
+    <Compile Include="Models\Mapping\DemographicsReportSectionMap.cs" />
+    <Compile Include="Models\Mapping\EDM_EduPlannerFieldMap.cs" />
+    <Compile Include="Models\Mapping\EDM_EduPlannerSubjectAreaMap.cs" />
+    <Compile Include="Models\Mapping\EDM_EduPlannerNocMap.cs" />
+    <Compile Include="Models\CareerSkill.cs" />
+    <Compile Include="Models\Custom\TopOccupation.cs" />
+    <Compile Include="Models\FYF_LifestyleQuestionResponseOptionLocationScore.cs" />
+    <Compile Include="Models\FYF_LifestyleQuestionResponseOption.cs" />
+    <Compile Include="Models\FYF_LifestyleQuestion.cs" />
+    <Compile Include="Models\DataPointLocation.cs" />
+    <Compile Include="Models\DataPointIndustry.cs" />
+    <Compile Include="Models\Custom\CareerProfileDetail.cs" />
+    <Compile Include="Models\Custom\CareerProfileDetailView.cs" />
+    <Compile Include="Models\Custom\CareerProfilesGeneralDetailsView.cs" />
+    <Compile Include="Models\Custom\IndustryRegionalEmpByNAICS.cs" />
+    <Compile Include="Models\Custom\IndustryRegionalShareOfProvincialEmploymentView.cs" />
+    <Compile Include="Models\DataPointCareer.cs" />
+    <Compile Include="Models\DataViewCareerProfileRegionalEmployment.cs" />
+    <Compile Include="Models\Custom\IndustryCommonOccupation.cs" />
+    <Compile Include="Models\Mapping\DataViewTopOccupationMap.cs" />
+    <Compile Include="Models\FYF_Archetype.cs" />
+    <Compile Include="Models\FYF_ArchetypeRelatedIndustry.cs" />
+    <Compile Include="Models\FYF_Class.cs" />
+    <Compile Include="Models\FYF_LogLifestyleQuestionResult.cs" />
+    <Compile Include="Models\FYF_LogQuizCareerResult.cs" />
+    <Compile Include="Models\FYF_LogQuizClassResult.cs" />
+    <Compile Include="Models\FYF_LogQuizLocationResult.cs" />
+    <Compile Include="Models\FYF_LogQuizResult.cs" />
+    <Compile Include="Models\FYF_QuizQuestion.cs" />
+    <Compile Include="Models\FYF_QuizSubject.cs" />
+    <Compile Include="Models\FYF_RelatedIndustryGroup.cs" />
+    <Compile Include="Models\FYF_Subject.cs" />
+    <Compile Include="Models\Mapping\FYF_AbilityMap.cs" />
+    <Compile Include="Models\Mapping\FYF_CareerQuizAnswerMap.cs" />
+    <Compile Include="Models\Mapping\FYF_CareerQuizQuestionMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LifestyleQuestionResponseOptionLocationScoreMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LifestyleQuestionResponseOptionMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LifestyleQuestionMap.cs" />
+    <Compile Include="Models\Mapping\DataPointLocationMap.cs" />
+    <Compile Include="Models\Mapping\DataPointIndustryMap.cs" />
+    <Compile Include="Models\Mapping\DataPointCareerMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileRegionalEmploymentMap.cs" />
+    <Compile Include="Models\Mapping\FYF_ArchetypeMap.cs" />
+    <Compile Include="Models\Mapping\FYF_ArchetypeRelatedIndustryMap.cs" />
+    <Compile Include="Models\Mapping\FYF_ClassMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogLifestyleQuestionResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizCareerQuizResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizCareerResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizClassResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizIndustryResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizLocationResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_LogQuizResultMap.cs" />
+    <Compile Include="Models\Mapping\FYF_QuizQuestionMap.cs" />
+    <Compile Include="Models\Mapping\FYF_QuizSubjectMap.cs" />
+    <Compile Include="Models\Mapping\FYF_RelatedIndustryGroupMap.cs" />
+    <Compile Include="Models\Mapping\FYF_SubjectMap.cs" />
+    <Compile Include="Models\Mapping\FYF_WorkPreferenceMap.cs" />
+    <Compile Include="Models\Mapping\IndustryRegionalShareOfProvincialEmploymentViewMap.cs" />
+    <Compile Include="Models\Mapping\NAICSCodesMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileExpectedOutlookByRegionMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileMap.cs" />
+    <Compile Include="Models\Mapping\DataViewCareerProfileTopIndustriesByEmploymentMap.cs" />
+    <Compile Include="Models\Mapping\NOCSkillLevelDemandOutlookMap.cs" />
+    <Compile Include="Models\Mapping\RatingThisToolResultMap.cs" />
+    <Compile Include="Models\Mapping\RegionalEmploymentPercentageAllOccupationsViewMap.cs" />
+    <Compile Include="Models\Mapping\RegionalTopIndustriesByJobOpeningsMap.cs" />
+    <Compile Include="Models\Mapping\ViewCareerProfileWorkRelatedSkillMap.cs" />
+    <Compile Include="Models\Mapping\ViewMinorGroupMap.cs" />
+    <Compile Include="Models\NAICSCodes.cs" />
+    <Compile Include="Models\LocationRegionView.cs" />
+    <Compile Include="Models\Custom\IndustryProfileCommonOccupationView.cs" />
+    <Compile Include="Models\Custom\IndustryProfileImpactView.cs" />
+    <Compile Include="Models\Custom\IndustryProfileRelatedDocumentView.cs" />
+    <Compile Include="Models\Custom\IndustryProfileRelatedSourceView.cs" />
+    <Compile Include="Models\Custom\IndustryProfileView.cs" />
+    <Compile Include="Models\Custom\IndustrySnapshotLatestView.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationType.cs" />
+    <Compile Include="Models\Mapping\CareerProfileDetailViewMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfilesGeneralDetailsViewMap.cs" />
+    <Compile Include="Models\Mapping\LocationRegionViewMap.cs" />
+    <Compile Include="Models\Mapping\LocationMap.cs" />
+    <Compile Include="Models\Mapping\LocationTypeMap.cs" />
+    <Compile Include="Models\Mapping\NOCGroupTypeMap.cs" />
+    <Compile Include="Models\Mapping\NOCJobTitlesMap.cs" />
+    <Compile Include="Models\Mapping\NOCMap.cs" />
+    <Compile Include="Models\Mapping\RegionalIndustryOutlookMap.cs" />
+    <Compile Include="Models\NOC.cs" />
+    <Compile Include="Models\NOCGroupType.cs" />
+    <Compile Include="Models\NOCJobTitles.cs" />
+    <Compile Include="Models\RatingThisToolResult.cs" />
+    <Compile Include="Models\RegionalIndustryOutlook.cs" />
+    <Compile Include="Models\Mapping\RegionalExpectedHighGrowthOccupationMap.cs" />
+    <Compile Include="Models\RegionalExpectedHighGrowthOccupation.cs" />
+    <Compile Include="Models\RegionalOccupationOutlook.cs" />
+    <Compile Include="Models\Mapping\RegionalOccupationOutlookMap.cs" />
+    <Compile Include="Models\RegionalTopIndustriesByJobOpenings.cs" />
+    <Compile Include="Models\RegionalUnemploymentRate.cs" />
+    <Compile Include="Models\Mapping\RegionalUnemploymentRateMap.cs" />
+    <Compile Include="Models\RegionalIndustryDetail.cs" />
+    <Compile Include="Models\Mapping\RegionalIndustryDetailMap.cs" />
+    <Compile Include="Models\RegionalEmployment.cs" />
+    <Compile Include="Models\Mapping\RegionalEmploymentMap.cs" />
+    <Compile Include="Models\Mapping\RegionalAgeDistributionMap.cs" />
+    <Compile Include="Models\RegionalAgeDistribution.cs" />
+    <Compile Include="Models\Mapping\RegionalDistrictMap.cs" />
+    <Compile Include="Models\RegionalDistrict.cs" />
+    <Compile Include="Models\Mapping\RegionalProfileDetailMap.cs" />
+    <Compile Include="Models\RegionalProfileDetail.cs" />
+    <Compile Include="Models\Custom\CareerProfileMinorGroup.cs" />
+    <Compile Include="Models\Custom\CareerProfileSkillType.cs" />
+    <Compile Include="Models\Custom\CareerProfileUnitGroup.cs" />
+    <Compile Include="Models\Custom\Competitiveness.cs" />
+    <Compile Include="Models\Custom\IndustrySnapshot.cs" />
+    <Compile Include="Models\Custom\RegionalAgeDistribution.cs" />
+    <Compile Include="Models\Custom\RegionalLabourMarketOutlook.cs" />
+    <Compile Include="Models\Custom\RegionalOutlook.cs" />
+    <Compile Include="Models\DataViewTopOccupation.cs" />
+    <Compile Include="Models\NOCSkillLevelDemandOutlook.cs" />
+    <Compile Include="Models\ViewCareerProfileWorkRelatedSkill.cs" />
+    <Compile Include="Models\ViewMinorGroup.cs" />
+    <Compile Include="WorkBC_CurrentNOCEDMContext.cs" />
+    <None Include="Models\Custom\RegionalDataInIndustry.cs" />
+    <Compile Include="Models\Custom\RegionalShareOfEmployment.cs" />
+    <Compile Include="Models\IndustryProfile.cs" />
+    <Compile Include="Models\IndustryProfileImpact.cs" />
+    <Compile Include="Models\Mapping\CareerProfileMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileCommonOccupationViewMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileImpactViewMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileRelatedDocumentViewMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileRelatedSourceViewMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileViewMap.cs" />
+    <Compile Include="Models\Mapping\CareerProfileSkillMap.cs" />
+    <Compile Include="Models\Mapping\CareerSkillMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileImpactMap.cs" />
+    <Compile Include="Models\Mapping\IndustryProfileMap.cs" />
+    <Compile Include="Models\Mapping\IndustrySnapshotLatestViewMap.cs" />
+    <Compile Include="Models\Mapping\NAICSMap.cs" />
+    <Compile Include="Models\Mapping\RegionalProfileMap.cs" />
+    <Compile Include="Models\Mapping\RelatedDocumentMap.cs" />
+    <Compile Include="Models\Mapping\RelatedSourceMap.cs" />
+    <Compile Include="Models\Mapping\WBC_CatchmentAreaMap.cs" />
+    <Compile Include="Models\Mapping\WBC_ProvinceMap.cs" />
+    <Compile Include="Models\Mapping\WBC_ServicesCentreContractorMap.cs" />
+    <Compile Include="Models\Mapping\WBC_ServicesCentreMap.cs" />
+    <Compile Include="Models\NAICS.cs" />
+    <Compile Include="Models\RegionalProfile.cs" />
+    <Compile Include="Models\RelatedDocument.cs" />
+    <Compile Include="Models\RelatedSource.cs" />
+    <Compile Include="Models\DataViewCareerProfile.cs" />
+    <Compile Include="Models\DataViewCareerProfileExpectedOutlookByRegion.cs" />
+    <Compile Include="Models\DataViewCareerProfileTopIndustriesByEmployment.cs" />
+    <Compile Include="Models\WBC_CatchmentArea.cs" />
+    <Compile Include="Models\WBC_Province.cs" />
+    <Compile Include="Models\WBC_ServicesCentre.cs" />
+    <Compile Include="Models\WBC_ServicesCentreContractor.cs" />
+    <Compile Include="Filters\NOCYearFilter.cs" />
+    <Compile Include="WorkBC_EDMContext.cs" />
+    <Compile Include="Navigator\Constants.cs" />
+    <Compile Include="Models\Custom\DemographicsAgeGroup.cs" />
+    <Compile Include="Models\Custom\DemographicsLanguage.cs" />
+    <Compile Include="Models\Custom\DemographicsPopulation.cs" />
+    <Compile Include="Models\Custom\DemographicsProjectedParticipation.cs" />
+    <Compile Include="Models\Custom\DemographicsProjectedPopulation.cs" />
+    <Compile Include="Models\Custom\DemographicsRegionPopulation.cs" />
+    <Compile Include="Models\Custom\DemographicsReport.cs" />
+    <Compile Include="Models\Custom\DemographicsReportContent.cs" />
+    <Compile Include="Models\Custom\DemographicsReportSection.cs" />
+    <Compile Include="Navigator\Models\Custom\ExtendedIndustry.cs" />
+    <Compile Include="Navigator\Models\Custom\ExtendedMonth.cs" />
+    <Compile Include="Navigator\Models\Custom\ExtendedSnapshot.cs" />
+    <Compile Include="Navigator\Models\Custom\ExtendedSnapshotSection.cs" />
+    <Compile Include="Models\Custom\HOOLMIndicators.cs" />
+    <Compile Include="Models\Custom\HOOReport.cs" />
+    <Compile Include="Models\Custom\HOOReportContent.cs" />
+    <Compile Include="Models\Custom\HOOReportSection.cs" />
+    <Compile Include="Navigator\Models\Industry.cs" />
+    <Compile Include="Navigator\Models\Mapping\ExtendedIndustryMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\ExtendedMonthMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\ExtendedSnapshotMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\ExtendedSnapshotSectionMap.cs" />
+    <Compile Include="Models\Mapping\HOOLMIndicatorsMap.cs" />
+    <Compile Include="Models\Mapping\HOOReportContentMap.cs" />
+    <Compile Include="Models\Mapping\HOOReportMap.cs" />
+    <Compile Include="Models\Mapping\HOOReportSectionMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\IndustryMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\MonthMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\SnapshotMap.cs" />
+    <Compile Include="Navigator\Models\Mapping\SnapshotSectionMap.cs" />
+    <Compile Include="Navigator\Models\Month.cs" />
+    <Compile Include="Navigator\Models\Snapshot.cs" />
+    <Compile Include="Navigator\Models\SnapshotSection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,73 @@
+/* Menu: WorkBC */
+
+.head-container {
+	@include bp(sm,to,md) {
+		background-color:color("white");
+		.icon-WorkBC-logo {
+			// height:23px;
+			// width:101px;
+			// margin-top:13px;
+			width: 163px;
+			height: 30px;
+			margin-left:15px;
+		}
+	}
+	@include bp(lg) {
+		[class*="icon-"] {
+			vertical-align: middle;
+		}
+		.icon-WorkBC-logo {
+			width: 260px;
+    		height: 48px;
+		}
+	}
+}
+
+.main-menu {
+	background-color:color("blueDark");
+	@include bp(lg) {
+		max-width: none;
+		&:after {
+			content:"";
+			display: block;
+			border-bottom:5px solid color("yellow");
+		}
+	}
+}
+
+.main-menu__list {
+	@include bp(lg) {
+
+	}
+}
+
+.main-menu__item {
+	@include bp(lg) {
+
+		
+	}
+	a:hover {
+		 
+	}
+}
+
+
+
+.main-menu__link.selected {
+	background-color:color("white");
+	color:color("blueDark");
+	a:hover {
+			//color:color("blueDark"); 
+	}
+}
+
+.head-container {
+	@include bp(sm,to,md) {
+		border-bottom:5px solid color('yellow');
+	}
+}
+
+ // 'blue':#0076c1,
+ //  'blueLight': #e5effc,
+ //  'blueMedium': #5c7193,
+ //  'blueDark': #364152,

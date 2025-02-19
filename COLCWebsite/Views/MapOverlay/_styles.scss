@@ -1,0 +1,16 @@
+.map-overlay__header {
+  padding-top: gap();
+  padding-right: gap(3);
+  .reset-google-map__map-btn{
+  	.icon-left{
+  		margin-left: -6px;
+  	}
+  	
+  }
+  &.panel-header--big{
+  	h2{
+  		padding-right: gap();
+
+  	}
+  }
+}

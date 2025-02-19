@@ -1,0 +1,37 @@
+/* Newcomer to B.C./Info for B.C. Residents - Welcome BC */
+
+a.bc-newcomers-and-residents__info-link {
+	margin-left: 10px;
+	color: color("orange");
+	.greater-than-symbol {
+		display: none;
+	}
+}
+
+.bc-newcomers-and-residents__info-item {	
+	h3{
+		font-weight:bold;
+	}
+	@include bp(sm,to,md) {
+    padding-top:gap(1.5); //30px
+  }
+  @include bp(lg) {
+		&.item-2{
+			border-left: 1px solid;
+		}
+		&.item-3{
+			border-left: 1px solid;
+		}
+	}
+}
+
+.swipe-nav {
+	margin-bottom:gap(1.5); //30px
+}
+
+.swipe-nav li {
+	background: color("blue-menu");
+	&.active {
+		background: color("orange");
+	}
+}

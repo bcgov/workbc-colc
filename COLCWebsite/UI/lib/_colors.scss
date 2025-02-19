@@ -1,0 +1,87 @@
+@import "mixins/color";
+
+/**
+ * Usage:
+ *
+ *   background-color: color('white');
+ */
+
+$colors: (
+  'white': #fff,
+  'black': #000,
+  'orange': #e3a82b,
+  'blue':#0076c1,
+  'blueLight': #e5effc,
+  'blueActive': #82B8D4,
+  'blueShade': #BCDBED,
+  'blueMedium': #5c7193,
+  'blueDark': #234075,
+  'blueDot': #5BC2E7,
+  'blueNavy': #464646,
+  //'green': #32C04C,
+  'green': #2bb974,
+  'lighterGrey': #eeeeee,
+  'lightGrey': #e1e1e1, 
+  'grey': #a8a8a8,
+  'greyDark': #6a727a,
+  //'red': #ff0000,
+  'red': #b73b33,
+  'red-workbc': #c00,
+  'blue-menu-dark': #274781,
+  'blue-menu': #336699,
+  'workbc-grey': #545d6d,
+  'workbc-btn-text': #2e3138,
+  'welcome-body':#17191d,
+  'welcome-blue':#244075,
+  'welcome-bg':#244278,
+  'footer-workbc': #012955,
+  'orangeDark':#e2a73a,
+  'inactive-blue': #3C5374,
+  'housing-welcome':#3580d2,
+  'savings-welcome':#f2d335,
+  'living-welcome':#f07a2d,
+  'tax-welcome':#6dc067,
+  'housing-work':#a3d9f5,
+  'savings-work':#f0f0f0,
+  'living-work':#d7cf27,
+  'tax-work':#a8d03c,
+  'grey-bg':#e9e9e9,
+  'lightBlue-bg':#d7e4eb,
+  'grey-panel':#f5f5f5,
+  'grey-selector':#d0d0d0,
+  'placeholder':#868a93,
+  'disabled':#cccccc,
+  'work-border': #fc3,
+  'work-bg': #e9ebf0,
+  'yellow': #E3A82B,
+  'welcome-yellow': #FFCC33,
+  'welcome-field': #282A2D,
+  'print-dark-font': #252525,
+  'print-dark-sq':#1E1E1E,
+  'print-lgray-sq': #CCCCCC,
+  'print-gray-sq': #979797,
+  'print-dgray-sq':#555555,
+  'print-dline': #364153,
+  'print-line': #CECECE
+);
+
+$semanticColors: (
+  'primary': color('orange'),
+  'bodyText': color('welcome-body'),
+  'lightText': color('white')
+);
+
+/**
+ * Creates placeholder selectors for each color setting the background color
+ * Example would be `%bg-white` which you could use like `@extend %bg-white`
+ */
+@each $color, $value in $colors {
+  %bg-#{$color} {
+    background-color: $value;
+  }
+}
+@each $color, $value in $semanticColors {
+  %bg-#{$color} {
+    background-color: $value;
+  }
+}

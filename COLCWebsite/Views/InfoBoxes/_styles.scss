@@ -1,0 +1,91 @@
+/* Newcomer to B.C. - Shared styles */
+
+.bc-newcomers-and-residents .panel-content {
+	padding-bottom:gap(1.25); //25px
+	&.swipe {
+		@include bp(md) {
+	    	visibility: visible;
+	 	}
+	}
+}
+
+.bc-newcomers-and-residents__info-link {
+	font-size:14px;
+}
+
+.bc-newcomers-and-residents__info-item {
+	@include bp(md,only) {
+		height:auto !important;
+		a.bc-newcomers-and-residents__info-link {
+			position:static;
+		}
+	}
+	@include bp(sm,to,md) {
+		h3,p,
+		.bc-newcomers-and-residents__info-link {
+			padding-left:gap(); //20px
+			padding-right:gap();
+		}
+	}
+	@include bp(sm) {
+		margin-bottom:gap(1.5); // 20px
+	}
+	@include bp(lg) {
+		margin-bottom:0;
+		padding-right:gap(1.2); // 24px
+		&.item-2{
+			padding-left:gap();
+		}
+		&.item-3{
+			padding-left:gap();
+		}
+	}
+	h3 {
+		margin-top:0;
+		margin-bottom:1em;	
+			.icon-link {
+				margin-left: 5px;
+			}	
+	}
+	p {
+		margin-top:0;
+		font-size:15px;
+	}
+}
+
+.bc-newcomers-and-residents__info-item[style*="height"] {
+	position: relative;
+}
+
+.bc-newcomers-and-residents .panel-content {
+	width: 100%;
+	margin: 0 auto;
+	padding:0;
+	@include bp(md) {
+		padding:gap(); // 20px;
+	}
+}
+
+.swipe-nav {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	text-align: center;
+	li {
+		height:16px;
+		width:16px;
+		@include border-radius(8px);
+		display: inline-block;
+		margin-right:gap(0.5);
+		margin-left:gap(0.5);
+		overflow: hidden;
+		text-indent: -30px;
+		background: #666;
+		&.active {
+			background: #000;
+		}
+	}
+	@include bp(md) {
+		display: none;
+	}
+}

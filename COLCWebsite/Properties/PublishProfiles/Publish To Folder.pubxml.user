@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\localrepos\workbc-colc-test\COLCWebsite\publish\</_PublishTargetUrl>
+    <History>True|2025-02-19T09:04:48.3905837Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/Placeholder.txt">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>02/24/2016 11:36:08</publishTime>
+    </File>
+    <File Include="bin/ColcBusinessLayerWcfService.dll">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/ColcBusinessLayerWcfService.dll.config">
+      <publishTime>02/18/2025 21:42:29</publishTime>
+    </File>
+    <File Include="bin/ColcBusinessLayerWcfService.pdb">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/ColcDataLayerWcfService.dll">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/ColcDataLayerWcfService.dll.config">
+      <publishTime>02/18/2025 21:42:29</publishTime>
+    </File>
+    <File Include="bin/ColcDataLayerWcfService.pdb">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/COLCWebsite.dll">
+      <publishTime>02/19/2025 01:04:45</publishTime>
+    </File>
+    <File Include="bin/COLCWebsite.pdb">
+      <publishTime>02/19/2025 01:04:45</publishTime>
+    </File>
+    <File Include="bin/CustomTaggingModule.dll">
+      <publishTime>01/30/2025 14:24:48</publishTime>
+    </File>
+    <File Include="bin/EDMEntities.dll">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/EDMEntities.dll.config">
+      <publishTime>02/18/2025 21:42:29</publishTime>
+    </File>
+    <File Include="bin/EDMEntities.pdb">
+      <publishTime>02/19/2025 01:03:36</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>04/12/2012 12:19:36</publishTime>
+    </File>
+    <File Include="bin/Elmah.Mvc.dll">
+      <publishTime>04/30/2015 17:46:24</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>06/16/2024 13:46:24</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>06/16/2024 13:47:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/11/2022 12:09:46</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/07/2023 23:09:56</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll">
+      <publishTime>01/30/2025 14:24:48</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/27/2022 16:41:34</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>05/15/2018 06:29:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/27/2022 16:41:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/27/2022 16:41:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/27/2022 16:41:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/27/2022 16:42:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/27/2022 16:42:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/27/2022 16:42:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/27/2022 16:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/27/2022 16:42:50</publishTime>
+    </File>
+    <File Include="bin/WebActivator.dll">
+      <publishTime>05/31/2012 01:55:16</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="googleecc4c4e6387851e9.html">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/fancybox.css">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/blank.gif">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/fancybox_loading%402x.gif">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/fancybox_loading.gif">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/fancybox_overlay.png">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/fancybox_sprite%402x.png">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/images/fancybox/fancybox_sprite.png">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="Scripts/fancybox/jquery.fancybox.pack.js">
+      <publishTime>02/18/2025 21:42:26</publishTime>
+    </File>
+    <File Include="UI/data/expenses/collection.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/expenses/model.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/location/collection.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/location/model.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/locationSet/collection.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/locationSet/model.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/regionalDetails/collection.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/regionalDetails/model.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/scenario/collection.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/data/scenario/model.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb-Bold.eot">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb-Bold.woff">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb-Medium.eot">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb-Medium.woff">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb.eot">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/fonts/DINWeb.woff">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/bcjp-logo.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/h1.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/1.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/bar-graph.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/bc-jobsplan.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/bc-logo-footer.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/chevron-black-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/chevron-blue-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/chevron-white-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/chevron.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/close.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/collapse-panel.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/collapse.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/expand-panel.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/expand.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/info-white.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/info-yellow.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/info.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/link.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin-black.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin-circle.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin-google.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin-orange.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin-white.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/map-pin.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/mapoverlay-map-pin.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/orange-triangle-link.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/pie-chart.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/remove.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/select-yellow.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/select.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/Welcome-BC.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/welcomebc/welcomebc-header-logo.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/back-to-top.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/bar-graph.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/bc-jobsplan.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/bc-logo-footer.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-black-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-black.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-blue-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-circle.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-white-small.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/chevron-white.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/close.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/collapse-panel.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/collapse.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/expand-panel.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/expand.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/info-white.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/info.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/link.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/map-pin-black.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/map-pin-circle.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/map-pin-google.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/map-pin-white.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/map-pin.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/mapoverlay-map-pin.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/pie-chart.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/remove-overview.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/remove.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/select-gray.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/select.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/icons/workbc/workbc-header-logo.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/logo.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/outercontent-1px.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/outercontent-bottom.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-2.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-3.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-4.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-5.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-6.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-7.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/regions/map-region-8.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Banner-2.jpg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Banner-3.jpg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Banner.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Expenses-Overlay-Banner.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Info-for-BC-Residents-Banner.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Map-Overlay-Banner.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Newcomer.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-RegionalDetails-Banner.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Section-Header-BG.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Top-Header-BG copy.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/WBC-COLC-Top-Header-BG.png">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/wbc_bknd.jpg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/welcomebc-loader.gif">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/welcomebc/favicon.ico">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/welcomebc/welcomebc-header-logo.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/workbc-loader.gif">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/workbc/favicon.ico">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/images/workbc/workbc-header-logo.svg">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/main.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/utils/breakpoints.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/utils/rivets.binders.odc.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/utils/rivets.formatters.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/utils/rivets.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/utils/tooltip.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/debouncedresize.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/excanvas.compiled.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/jquery.scrollLock.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/maplabel-compiled.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/modernizr-custom.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/require.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/swipe-nav.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI/vendor/swipe.js">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="UI_build/data/expenses/collection.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/expenses/model.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/location/collection.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/location/model.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/locationSet/collection.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/locationSet/model.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/regionalDetails/collection.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/regionalDetails/model.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/scenario/collection.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/data/scenario/model.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/filerev.json">
+      <publishTime>02/19/2025 01:04:42</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb-Bold.eot">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb-Bold.woff">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb-Medium.eot">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb-Medium.woff">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb.eot">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/fonts/DINWeb.woff">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/bcjp-logo.png">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/h1.png">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/1.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/bar-graph.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/bc-jobsplan.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/bc-logo-footer.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/chevron-black-small.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/chevron-blue-small.svg">
+      <publishTime>02/19/2025 01:04:31</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/chevron-white-small.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/chevron.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/close.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/collapse-panel.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/collapse.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/expand-panel.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/expand.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/info-white.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/info-yellow.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/info.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/link.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin-black.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin-circle.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin-google.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin-orange.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin-white.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/map-pin.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/mapoverlay-map-pin.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/orange-triangle-link.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/pie-chart.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/remove.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/select-yellow.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/select.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/Welcome-BC.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/welcomebc/welcomebc-header-logo.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/back-to-top.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/bar-graph.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/bc-jobsplan.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/bc-logo-footer.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-black-small.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-black.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-blue-small.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-circle.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-white-small.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/chevron-white.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/close.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/collapse-panel.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/collapse.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/expand-panel.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/expand.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/info-white.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/info.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/link.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/map-pin-black.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/map-pin-circle.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/map-pin-google.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/map-pin-white.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/map-pin.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/mapoverlay-map-pin.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/pie-chart.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/remove-overview.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/remove.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/select-gray.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/select.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/icons/workbc/workbc-header-logo.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/logo.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/outercontent-1px.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/outercontent-bottom.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-2.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-3.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-4.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-5.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-6.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-7.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/regions/map-region-8.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Banner-2.jpg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Banner-3.jpg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Banner.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Expenses-Overlay-Banner.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Info-for-BC-Residents-Banner.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Map-Overlay-Banner.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Newcomer.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-RegionalDetails-Banner.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Section-Header-BG.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Top-Header-BG copy.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/WBC-COLC-Top-Header-BG.png">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/wbc_bknd.jpg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/welcomebc-loader.gif">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/welcomebc/favicon.ico">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/welcomebc/welcomebc-header-logo.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/workbc-loader.gif">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/workbc/favicon.ico">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/images/workbc/workbc-header-logo.svg">
+      <publishTime>02/19/2025 01:04:32</publishTime>
+    </File>
+    <File Include="UI_build/main.c73701d3.js">
+      <publishTime>02/19/2025 01:04:42</publishTime>
+    </File>
+    <File Include="UI_build/utils/breakpoints.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/utils/rivets.binders.odc.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/utils/rivets.formatters.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/utils/rivets.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/utils/tooltip.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/debouncedresize.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/excanvas.compiled.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/jquery.scrollLock.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/maplabel-compiled.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/modernizr-custom.e1037ef6.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/require.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/swipe-nav.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="UI_build/vendor/swipe.js">
+      <publishTime>02/19/2025 01:04:39</publishTime>
+    </File>
+    <File Include="Views/BackToTop/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Collapse/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Collapse/_styles.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/CompareOverlay/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/CompareOverlay/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/CompareOverlay/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/CompareOverlay/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesCharts/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/ExpensesCharts/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesCharts/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesCharts/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesDetailsOverlay/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/ExpensesDetailsOverlay/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesDetailsOverlay/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/ExpensesDetailsOverlay/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Footer/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Footer/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Footer/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/GoogleMap/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/GoogleMap/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/GoogleMap/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/GoogleMap/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Home/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Home/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Home/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/HtmlFoot/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/HtmlHead/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/InfoBoxes/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/InfoBoxes/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/InfoBoxes/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/InfoBoxes/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Locations/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Locations/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Locations/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Locations/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/MapOverlay/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/MapOverlay/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/MapOverlay/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/MapOverlay/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Menu/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Menu/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Menu/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Menu/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/OccupationSalary/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/OccupationSalary/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/OccupationSalary/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/OccupationSalary/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overlay/footer/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overlay/header/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overlay/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Overlay/view.cshtml">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overlay/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overlay/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:27</publishTime>
+    </File>
+    <File Include="Views/Overview/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/Overview/view.cshtml">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/Overview/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/Overview/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/RegionalDetails/script.js">
+      <publishTime>02/19/2025 00:30:50</publishTime>
+    </File>
+    <File Include="Views/RegionalDetails/view.cshtml">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/RegionalDetails/_styles-welcome.scss">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/RegionalDetails/_styles-workbc.scss">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>02/18/2025 21:42:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/19/2025 01:04:45</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

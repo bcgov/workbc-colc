@@ -1,0 +1,61 @@
+﻿@model COLC.COLCWebsite.Models.Home.HomeModels
+
+@{
+    ViewBag.Title = "Overview";
+}
+
+@*@using (Html.BeginForm("Action", "Controller"))
+{
+    <p>New to BC?</p>
+    @foreach (var location in Model.Locations)
+    {
+        @Html.Partial("/Partials/Location", location);
+    }
+
+    @Html.TextBoxFor(Model.Occupation);
+    @Html.TextBoxFor(Model.Salary);
+    <input type="submit" />
+}*@
+
+<div class="overview__bg hide-for-print">
+    <div class="overview__titles">
+        <div class="container">
+            <h1>Cost of Living Calculator</h1>
+            <div class="overview__intro">
+                <h2>Are you new to B.C. or thinking of moving here? Need help
+                deciding where to live and work?<br/> The Cost of Living Calculator can help you make the right move!</h2>
+
+            </div>
+        </div>    
+    </div>
+</div>
+
+
+<div class="overview unresolved hide-for-print" rv-class-noneighbourhoodlayout="model:noNeighbourhoodLayout">
+    
+    <div class=" container" rv-class-noneighbourhoodlayout="model:noNeighbourhoodLayout">
+
+        <form class="overview__form" >
+            <div class="overview__locations">
+                @Html.Action("LocationsPartial", "Locations")
+                <button type="button" class="overview__compare__btn" rv-on-click="view.addLocationSet" rv-hide="model:locationSetsCount | gt 1">
+                    Compare a second city<span class="icon-right icon-chevron-blue-small"></span>                
+                </button>    
+            </div>
+        </form>
+        <div class="overview__required-text">*Required fields</div>
+
+        <div class="map-overlay">
+            @Html.Partial("~/Views/MapOverlay/view.cshtml")
+        </div>
+
+        <div class="expenses-overlay">
+            @Html.Partial("~/Views/ExpensesDetailsOverlay/view.cshtml")
+        </div>
+
+    </div>
+</div>
+
+    
+
+

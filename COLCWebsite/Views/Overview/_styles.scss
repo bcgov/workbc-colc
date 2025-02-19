@@ -1,0 +1,175 @@
+.overview {
+    opacity: 1;
+    //filter: alpha(opacity=100); min-height: 370px;
+    transition: opacity .3s;
+    position: relative;
+    padding-top:gap();
+    padding-bottom:gap(9/4);
+    background-color:color("white");
+    max-width:1200px; margin: 0 auto; 
+    @include bp(sm,to,md){
+        padding-left: 20px;
+        padding-right: 20px;
+        h1 {
+          padding-left:0;
+          padding-right:0;
+        }
+    }
+
+    @include bp(lg) {
+        label.error {
+              font-size: 12px;
+              
+        }
+    }
+}
+
+.overview__titles{
+    //display:block;height:537px;width:100%;position:absolute;left:0;right:0;z-index:-1;   
+    max-width: 1200px;
+    background-image: url(../UI/images/WBC-COLC-Banner-3.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-top:gap(3/2);
+    margin: auto;
+    overflow: hidden;
+    background-color: #fff;
+  @include bp(sm,to,md){
+    background-image:url("../UI/images/WBC-COLC-Banner-3.jpg");
+    background-size: cover;
+   // as: margin:0 -20px; issue<976px 
+    padding:gap();
+  }
+}
+
+.overview__form{
+    @extend %clearfix;
+    margin-bottom:gap(3/4);
+}
+
+.overview__titles{
+    min-height: 230px;
+    @include bp(lg){
+        min-height: 310px;
+    }  
+    h1{
+        font-weight:600;
+    }  
+}
+.overview__intro{
+    h2{
+        display:inline-block;
+        width: 80%;
+        font-size:16px;
+        @include bp(sm,to,md){
+            width: 100%;
+        }
+    }
+}
+
+.overview__locations{
+    width: 100%;
+}
+.overview__locations__salary{
+    float: left;
+
+    @include bp(sm,to,md){
+        width: 100%;
+    }
+}
+
+.overview__compare__btn{
+    clear: both;
+    padding:0 gap(1/2);
+    margin-top:gap();
+    font-weight: 700;
+}
+
+.overview__submit{
+    float: right;
+
+    span.label {
+        position: static;
+        top: auto;
+        right: auto;
+        margin: 0;
+
+        &.edit {
+            display: none;
+        }
+    }
+}
+
+.boxed{
+    @include bp(sm,to,md){
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 16px;
+        margin-top:25px;
+    }
+}
+
+.overview__locations_container + .overview__locations_container{
+     @include bp(sm,to,md){
+        margin-top: 25px;
+        border-top: solid 1px #4c4c4c;
+        border-bottom: solid 1px #4c4c4c;
+        padding-bottom: 50px;
+     }
+
+}
+
+.overview__required-text {
+  color: color("welcome-blue");
+  display: block;
+  font-size: 16px;
+  font-weight:600;
+  margin-top:gap(1/4);
+  @include bp(lg) {
+    // position: absolute; bottom: 10px; left: 0px;
+    z-index: 10;
+    margin-top:-20px;
+  }
+}
+
+.overview__compare__btn{
+  //color: color("blueDark");
+  @include bp(sm,to,md) {
+    //color: color("black");
+  }
+  font-size:16px;
+  padding-left:0px;
+  .icon-chevron-white-small{
+    margin-top:-2px;
+    @include bp(sm,to,md) {
+      display: none;
+    }
+  }
+  .icon-chevron-black-small{
+    margin-top:-2px;
+    @include bp(lg) {
+      display: none;
+    }
+  }
+    @include bp(lg) {
+        margin-top: 0;
+        position: relative;
+        top: -22px;
+    }
+}
+
+.survey__submit{
+  width: 150px;
+  padding: 16px 50px 14px 10px;
+  margin-top:0;
+}
+
+// as: 
+.row:before, .row:after{ content: " "; display: table; clear:both;  }
+@include bp(lg){
+.lg-col-6{ width:50%; }
+.pull-left-lg{ float: left; }
+.pull-right-lg{ float: right; }
+.align-r-lg{ text-align: right; }
+}

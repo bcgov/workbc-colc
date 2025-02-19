@@ -1,0 +1,88 @@
+// @version 0.3.5
+
+@mixin bp($bp-min, $mode:up, $bp-max:null) {
+
+  $media-min: "";
+  $media-max: "";
+  $keys: map-keys($bps); 
+  $len: length($keys);
+
+  $min: map-get($bps, $bp-min);
+  @if not $min {
+    @error "mixin `bp` could not find the provided `$bp-min` breakpoint '#{$bp-min}'";
+  }
+
+
+  @if ($min > 0) {
+    $media-min: "(min-width: #{$min})";
+  }
+
+
+  @if ($mode == only) {
+    $index-min: index($keys, $bp-min) ;
+    @if ($index-min < $len) {
+      $bp-name: nth($keys, $index-min + 1);     // get the name of the next breakpoint
+      $max: map-get($bps, $bp-name) - 1px; // get the value of the next breakpoint
+      $media-max: "(max-width: #{$max})";
+    }
+  }
+  @else if ($mode == to) {
+    @if not $bp-max {
+      @error "mixin `bp` is missing the parameter `$bp-max`";
+    }
+    $index-max: index($keys, $bp-max);
+    @if not $index-max {
+      @error "mixin `bp` could not find the provided `$bp-max` breakpoint '#{$bp-max}'";
+    }
+    @else if ($index-max < $len) {
+      $bp-name: nth($keys, $index-max + 1);
+      $max: map-get($bps, $bp-name) - 1px;
+      $media-max: "(max-width: #{$max})";
+    }
+  }
+
+
+  @if ($media-min != "") and ($media-max != "") {
+    @media #{$media-min} and #{$media-max} {
+      @content;
+    }
+  }
+  @else if ($media-min != "") or ($media-max != "") {
+    @media #{$media-min}#{$media-max} {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+@mixin bp-detect($bps, $legacy:false) {
+  @if $legacy {
+    html {
+      @each $bp-name, $bp in $bps {
+       @include bp($bp-name) {
+         font-family: "#{$bp-name}";
+        }
+      }
+    }
+  }
+  body {
+    @if $legacy {
+      font-family: sans-serif;
+    }
+
+    &:before { 
+      display: none; 
+      content: "#{map-keys($bps)}";
+    }
+    &:after {
+      display: none;
+      @each $bp-name, $bp in $bps {
+       @include bp($bp-name) {
+         content: "#{$bp-name}"
+        }
+      }
+    }
+  }
+}

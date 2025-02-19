@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+	<parameter name="WorkBC_DBServer" description="WorkBC DB server">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" matchString="__WORKBC_DB_SERVER__"/>
+	</parameter>
+	<parameter name="WorkBC_DBUser" description="Database user for WorkBC DB connection">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__WORKBC_DB_USER__"/>
+	</parameter>
+	<parameter name="WorkBC_DBPassword" description="Password for WorkBC DB user">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__WORKBC_DB_PASSWORD__"/>
+	</parameter>
+	<parameter name="WorkBC_DBName" description="WorkBC DB name">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__WORKBC_DB_NAME__"/>
+	</parameter>
+	<parameter name="CMS_DBServer" description="CMS DB server">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" matchString="__CMS_DB_SERVER__"/>
+	</parameter>
+	<parameter name="CMS_DBUser" description="Database user for CMS DB connection">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__CMS_DB_USER__"/>
+	</parameter>
+	<parameter name="CMS_DBPassword" description="Password for CMS DB user">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__CMS_DB_PASSWORD__"/>
+	</parameter>
+	<parameter name="CMS_DBName" description="CMS DB name">
+		<parameterEntry kind="XmlFile" scope="\\configuration\\connectionStrings\\add[@name='WorkBCConnectionString']" match="connectionString" mathString="__CMS_DB_NAME__"/>
+	</parameter>
+	<parameter name="DataCacheMinutes" description="Number of minutes to cache data for occupations, region details, locations, taxes, and salary levels">
+		<parameterEntry kind="XmlFile" scope="Web.config$" match="/configuration/appSettings/add[@key='DataCacheMinutes']/@value"/>
+	</parameter>
+	<parameter name="WelcomeBCHost" description="Host for WelcomeBC skin">
+		<parameterEntry kind="XmlFile" scope="Web.config$" match="/configuration/appSettings/add[@key='WelcomeBCHost']/@value"/>
+	</parameter>
+	<parameter name="WorkBCHost" description="Host for WorkBC skin">
+		<parameterEntry kind="XmlFile" scope="Web.config$" match="/configuration/appSettings/add[@key='WorkBCHost']/@value"/>
+	</parameter>
+	<parameter name="CompilationDebugSetting" description="Debug compilation setting">
+		<parameterEntry kind="XmlFile" scope="Web.config$" match="/configuration/system.net/compilation/@debug"/>
+	</parameter>
+	<parameter name="CustomErrorsMode" description="Custom errors mode setting, Values: Off, RemoteOnly, On">
+		<parameterEntry kind="XmlFile" scope="Web.config$" match="/configuration/system.net/customErrors/@mode"/>
+	</parameter>
+</parameters>

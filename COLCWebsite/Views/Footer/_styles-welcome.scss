@@ -1,0 +1,40 @@
+// /* Footer: WelcomeBC */
+
+footer {
+  background-color:color("welcome-bg");
+}
+
+// .page-footer p {
+// 	font-size:13px;
+// 	line-height: 1.6;
+//   position: relative;
+// 	margin-top:gap(2.5);
+// 	@include bp(sm,only) {
+//     position: absolute;
+//     bottom:0px;
+// 		font-size:10px;
+//     margin-left: gap(1.75);
+//     margin-right: gap(1.75);
+// 		margin-top:0;
+//     margin-bottom:0;
+// 	}
+// }
+
+// .footer-menu {
+//   margin-top: gap(2.4);
+//   font-size: 13px;
+// 	@include bp(sm,only) {
+//     font-size: 11px;
+//     margin-top: gap();
+// 		padding-bottom: gap(2);
+// 	}
+// }
+
+// a.footer-menu__link{
+
+//   &:active,
+//   &:focus,
+//   &:visited {
+//   	color: color("white");
+//   }
+// }

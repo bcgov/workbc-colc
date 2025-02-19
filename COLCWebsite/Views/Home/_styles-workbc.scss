@@ -1,0 +1,37 @@
+body {
+  background:color("work-bg");
+}
+
+.panel-content {
+	box-shadow:none;
+}
+
+.page-content{
+  @include bp(lg) {
+  //	padding-bottom:5px;
+  }
+}
+
+.banner-image{
+  display: block;
+  background-image:url("../UI/images/WBC-COLC-Banner-3.jpg");
+  background-size: cover;
+  background-position: 49% 49%;
+  max-width: 1200px;
+  background-repeat: no-repeat;
+  height: 420px;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+  @include bp(sm,to,md) {
+    display:none;
+  }
+}
+
+.results {
+  margin-top: 40px;
+}

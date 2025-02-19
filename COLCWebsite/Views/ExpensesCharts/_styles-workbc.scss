@@ -1,0 +1,185 @@
+.expenses-charts {
+  background: color('blueDark');
+  color: color('white');
+  .regional-details__content{
+      color: color("welcome-body");
+  }
+}
+
+.expenses-charts__summary {
+    border-top: 1px solid #fff;
+}
+
+.expenses-charts__summary__item--bold{
+        font-weight: bold;
+}
+
+.expenses-charts__switcher__item {
+    background-color: color('inactive-blue');
+    &.is-active{
+      background-color: color('blueDark');        
+    }
+}
+
+.expenses-charts .panel-header--big {
+  background: url('../UI/Images/WBC-COLC-Section-Header-BG.png') no-repeat center;
+  padding-top:gap();
+  padding-bottom:gap();
+  @include bp(lg) {
+    padding-top: 50px;
+    padding-bottom: 27px;
+    h2 {
+      font-size:32px;
+    }
+  }
+}
+
+.flot-y-axis, .flot-x-axis{ 
+    .tickLabel{        
+        color: color('white');
+    }
+}
+
+.flot-y-axis{ 
+    .tickLabel:first-child{
+        font-family: $workbc-font-bold;
+        font-weight: bold;
+    }
+}
+
+.expenses-charts__compare {
+  padding-left:0px;
+  .icon-chevron-white-small {
+    margin-top:-2px;
+  }
+}
+
+.expenses-charts__remove-btn {
+    .icon-remove {
+        @include bp(sm,only){
+            margin-top:0;
+        }
+    }
+}
+
+.expenses-charts__print{
+  .icon-print {
+      width:16px; height:10px;
+      background-color:color("blueDot");
+    }
+}
+
+.expenses-charts__legend{
+      margin-left:gap(5/2);
+    @include bp(md,only){
+      margin-left:auto;
+    }  
+    @include bp(sm,only){
+      margin-left:-10px;
+    }
+}
+// details for Monthly expenses
+// .expenses-charts__summary__subitem{
+//   padding:3px 0 4px 10px;
+// }
+// .expenses-charts__summary__itemname {
+//     display: inline-block;
+//     width: 65%;
+// }
+.more-expense-block{
+  margin:10px 0;
+  h4{ margin:0;  }
+}
+   
+.expenses-charts__summary__item .expense-pointer{ 
+    width:0px; height:0px; display: inline-block; margin-left: 10px;
+    border-bottom: 6px solid #fff; 
+    border-right: 4.5px solid transparent;
+    border-left: 4.5px solid transparent; 
+} 
+.expenses-charts__summary__item.collapsed-toggle .expense-pointer{
+    border-bottom: 0; border-top: 6px solid #fff; 
+    border-right: 4.5px solid transparent;
+    border-left: 4.5px solid transparent; 
+}
+// print related
+.expenses-charts__print{
+    .print-icon{
+      color:#fff; background-color: #5bc2e7;
+    }
+}
+.hide-on-screen, .expenses-charts__city.copy{ display: none; }
+
+@media print {
+    * {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+    body * { visibility: hidden; }
+    body{ background-color: #fff;  }
+    .page{ padding:0 50px; position: relative; height:100%; }
+    .show-for-print *{ visibility: visible; }
+    .show-for-print { visibility: visible; display:block; }
+    .hide-for-print, .results [class*="icon-"], .content-outer-bottom, .bc-newcomers-and-residents{ display:none !important; visibility: hidden;  }
+    .page-break{ page-break-before: always; }
+    
+    
+    .container{ max-width:100%; }
+    .head-container{
+        border-bottom:1px solid color("print-dline"); padding:25px 0 10px;
+       .container:after{ display: table; content:" "; clear: both; }
+       .icon-WorkBC-logo{ margin-left:0; }
+       img{ margin:0; }
+     }
+    
+    .expenses-charts__summary__detailed-container{ position:relative; }
+    .results, .panel{ margin-top:0  }
+    .panel-content.is-multiple{ position: static; 
+        .expenses-charts__legend__item{ text-align: inherit; }
+    }
+    
+    .is-multiple .expenses-charts__pie:first-child{ margin-right:2%; }
+    .is-multiple .expenses-charts__pie {  width: 48%; display: block; margin-right:2%; float: left;
+        .expenses-charts__city.copy{ display:block; }
+        .page-break-conditional{ page-break-before: always; page-break-inside: avoid;  }
+        .page-break{ page-break-before: avoid; page-break-inside: avoid;  }
+        .expenses-charts__legend__title{ width:70%; }
+        .expenses-charts__money{ width:28%; }
+        .expenses-charts__city{ width:auto; padding:0; font-weight:600; }
+        .expenses-charts__pie-chart-container {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .panel-content{ padding:0; 
+        .expenses-charts__city{ width:40%; padding:0; font-weight:600; }
+        .expenses-charts__pie-chart-container {
+            width: 48%;
+            text-align: left;
+            float:left;
+        }
+        //.expenses-charts__pie-chart { height: 250px; width: 48%; float:left; margin-left:-2%; display: block; }
+        //.expenses-charts__pie-chart { height: 250px; width: 400px; float:left; margin-left:-70px; display: block; }        
+
+        .expenses-charts__summary__detailed-container.is-collapsed { display: block !important; }
+       
+        .expenses-charts__money{ width:32%; }
+        .expenses-charts, .expenses-charts__city, .pieLabel{ color:color("print-dark-font"); }
+
+
+        .expenses-charts__summary{ border-top:1px solid color("print-dline"); }
+        h4{ font-weight:600; color:color("print-dark-font"); margin-bottom:5px; }
+        .expenses-charts__summary__subitem{ font-weight:normal; padding-left:0; }
+
+    }   
+
+}
+
+// @supports (-ms-ime-align:auto) {
+//     @media print {
+//         .panel-content .expenses-charts__pie-chart{
+//             width:48%;margin-left:-100px; margin-right: 90px; 
+//         }
+//         .expenses-charts__legend{ width:48%; margin-left: 0; }
+//     }
+// }

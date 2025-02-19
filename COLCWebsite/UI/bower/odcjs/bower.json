@@ -1,0 +1,27 @@
+{
+  "name": "ODC.JS",
+  "description": "Object Define & Create - Micro framework for object definition (class or singleton) and creation (instantiate)",
+  "version": "0.3.3",
+  "authors": [
+    "Thomas Hermann <thomas.hermann@fcv.ca>"
+  ],
+  "homepage": "http://gitlab/front-end/odcjs",
+  "private": true,
+  "dependencies"  : {
+    "jquery": ">= 1.9.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "examples",
+    ".jshintrc",
+    "Gruntfile",
+    "ODC.sublime-project",
+    "package.json",
+    "README.md"
+  ]
+}

@@ -1,0 +1,50 @@
+/* Newcomer to B.C./Info for B.C. Residents - WorkBC */
+
+.panel-header--big {
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.bc-newcomers-and-residents__newcomer-title-wrap {
+	background-image: url('../UI/Images/WBC-COLC-Newcomer.png');
+}
+
+.bc-newcomers-and-residents__residents-title-wrap {
+	background-image: url('../UI/Images/WBC-COLC-Info-for-BC-Residents-Banner.png');
+}
+
+.bc-newcomers-and-residents__info-link {
+	font-weight:bold;
+	.icon-orange-triangle-link {
+		display: none;
+	}
+}
+
+.bc-newcomers-and-residents .panel-content {
+	@include bp(md) {
+		padding-top:0;
+	}
+}
+
+.bc-newcomers-and-residents__info-item {
+	padding-top:gap(1.75); // 35px
+	h3{
+		font-family: $workbc-font-bold;
+	}
+	@include bp(lg) {
+		padding-bottom:gap(1.75); // 35px
+		&.item-1{
+			border-right: 1px solid;
+		}
+		&.item-2{
+			border-right: 1px solid;
+		}
+	}
+}
+
+.swipe-nav li {
+	background: color("blueDot");
+	&.active {
+		background: color("blueNavy");
+	}
+}

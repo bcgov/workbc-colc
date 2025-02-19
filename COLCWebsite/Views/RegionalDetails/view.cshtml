@@ -1,0 +1,73 @@
+<div class="regional-details panel hide-for-print">
+    <div class="panel-header--big">
+        <h2>Regional Details</h2>
+    </div>
+    <div class="panel-content clearfix">
+        <div class="regional-details__content" rv-each-regionaldetails="model:regionalDetails">
+            <div rv-if="regionaldetails:RegionName">
+                <h3 class="pull-left" id="region-name">{regionaldetails:RegionName}</h3>
+
+                <div class="regional-details__keyparticipation lg-pull-left lg-one-half">
+                    <div class="regional-details__row clearfix">
+                        <h5 class="regional-details__small-title pull-left">Key Cities</h5>
+                        <span class="regional-details__stat pull-right" id="key-cities">{regionaldetails:KeyCities}</span>
+                    </div>
+                    <div class="regional-details__row clearfix">
+                        <h5 class="regional-details__small-title pull-left" id="forecasted-annual-growth-title">Forecasted Annual Employment Growth Rate ({regionaldetails:DataYearStart}-{regionaldetails:DataYearEnd})</h5>
+                        <span class="regional-details__stat pull-right" id="forecasted-annual-growth">{regionaldetails:ForecastedAnnualEmploymentGrowth}%</span>
+                    </div>
+
+                    <div class="regional-details__map">
+                        <img rv-src="'/UI/Images/regions/map-region-{0}.png' | format regionaldetails:RegionID" alt="map of British Columbia highlighting the Northeast region" id="region-map">
+                    </div>
+                </div>
+
+                <div class="regional-details__growth lg-pull-right lg-one-half">
+                    <h4 class="regional-details__block-title">Employment Outlook</h4>
+                    <ul class="regional-details__employment-graph" data-stats-type="graphic" data-graphic-type="cursor-horizontal">
+                        <li class="regional-details__employment_stat clearfix" id="regional-stat1">
+                            <div class="regional-details__employment_stat-label">{regionaldetails:DataYearStart}</div>
+                            <div class="regional-details__employment_stat-bar">
+                                <div class="regional-details__employment_stat-value">
+                                    <div class="regional-details__employment_stat-num"
+                                    rv-style="'width: {0}%' | format regionaldetails:EmploymentGrowthStartOfOutlookPerCent">{regionaldetails:EmploymentGrowthStartOfOutlook | thousandDelimiter}</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="regional-details__employment_stat clearfix" id="regional-stat2">
+                            <div class="regional-details__employment_stat-label">{regionaldetails:DataYearMidpoint}</div>
+                            <div class="regional-details__employment_stat-bar">
+                                <div class="regional-details__employment_stat-value">
+                                    <div class="regional-details__employment_stat-num"
+                                    rv-style="'width: {0}%' | format regionaldetails:EmploymentGrowthMidpointOfOutlookPerCent">{regionaldetails:EmploymentGrowthMidpointOfOutlook | thousandDelimiter}</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="regional-details__employment_stat clearfix" id="regional-stat3">
+                            <div class="regional-details__employment_stat-label">{regionaldetails:DataYearEnd}</div>
+                            <div class="regional-details__employment_stat-bar">
+                                <div class="regional-details__employment_stat-value">
+                                    <div class="regional-details__employment_stat-num"
+                                    rv-style="'width: {0}%' | format regionaldetails:EmploymentGrowthEndOfOutlookPerCent">{regionaldetails:EmploymentGrowthEndOfOutlook | thousandDelimiter}</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="regional-details__row clearfix">
+                        <h5 class="regional-details__small-title pull-left" id="employment-increase-range">Forecasted 10-year total employment growth</h5>
+                        <span class="regional-details__stat pull-right" id="total-employment-increase">{regionaldetails:TotalEmploymentIncrease | thousandDelimiter}</span>
+                    </div>
+
+                    <div class="regional-details__top-occupations">
+                        <h4 id="top-occupations-title">Top 3 Occupations in this region</h4>
+                        <ul class="regional-details__related-links">
+                            <li><a target="_blank" rv-href="'https://www.workbc.ca/Job-Seekers/Career-Profiles/{0}' | format regionaldetails:TopNOCCode1" id="top-occupation-group1">{regionaldetails:TopOccupation1} (NOC {regionaldetails:TopNOCCode1})</a></li>
+                            <li><a target="_blank" rv-href="'https://www.workbc.ca/Job-Seekers/Career-Profiles/{0}' | format regionaldetails:TopNOCCode2" id="top-occupation-group2">{regionaldetails:TopOccupation2} (NOC {regionaldetails:TopNOCCode2})</a></li>
+                            <li><a target="_blank" rv-href="'https://www.workbc.ca/Job-Seekers/Career-Profiles/{0}' | format regionaldetails:TopNOCCode3" id="top-occupation-group3">{regionaldetails:TopOccupation3} (NOC {regionaldetails:TopNOCCode3})</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.google-map{
+  position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+  .gm-style{
+	 .gmnoprint{
+		//display: none;
+	}
+}
+  .googleMap__selectedCity{
+    .googleMap__selectedCity__btn{
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+  	p{
+  		margin-bottom: 0px;
+  		margin-top: 0px;
+  		span{
+  			font-size: 1.1em;
+  			font-weight: bold;
+  		}
+  	}
+  }
+  img{
+    max-width: none;
+  }
+}

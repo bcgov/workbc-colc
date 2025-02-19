@@ -1,0 +1,37 @@
+.expenses-details__form {
+  .panel-header{
+    border-top: 4px solid color("grey-bg");
+    [class*="icon-"] {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+    }
+    &:first-child{
+      border-top-color: color("white");
+    }
+  }
+  background:color("grey-bg");
+}
+
+.expenses-details__form {
+  .legend {
+    top:17px;    
+  }
+}
+
+.expenses-details__subheading {
+  font-weight: bold;
+}
+
+.expenses-details__expand{
+  @include bp (md,only){
+    margin-right: 35px;
+  }
+}
+
+.expenses-details__compare {
+  width:auto;
+  @include bp (md,only){
+    
+  }
+}

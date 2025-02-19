@@ -1,0 +1,14 @@
+<div class="map-overlay">
+	<div class="overlay" data-overlay='{ "fixed": true }'>
+	    @Html.Partial("~/Views/Overlay/header/view.cshtml")
+       <div class="map-overlay__header panel-header--big">
+        <h2 rv-if="model:isCityLocation | eq 0">Click on a region to select a city</h2>
+        <h2 rv-if="model:isCityLocation | eq 1">City - {model:cityName}</h2>
+       <button type="button" class="reset-google-map__map-btn">
+
+<span class="icon-mapoverlay-map-pin icon-left"></span>Reset map</button>
+      </div>
+	    @Html.Partial("~/Views/GoogleMap/view.cshtml")
+	    @Html.Partial("~/Views/Overlay/footer/view.cshtml")
+    </div>
+</div>

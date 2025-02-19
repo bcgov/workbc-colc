@@ -1,0 +1,112 @@
+name: Build and Deploy COLC to Dev
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  #push:
+  #  branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  NUGET_CERT_REVOCATION_MODE: offline # Bypass cert validation during NuGet Restore
+  HTTP_PROXY: ${{ vars.HTTP_PROXY }}
+  HTTPS_PROXY: ${{ vars.HTTP_PROXY }}
+
+jobs:
+  build:
+    environment: Dev
+    runs-on: colc-ci
+    defaults:
+      run:
+        working-directory: "${{github.workspace}}/COLCWebsite"
+
+    steps:
+      - uses: actions/checkout@v4             
+
+      - name: Install Bundler # Ruby/gem/bundler are needed only for sass and compass. Can't these be installed with npm?
+        run: gem install bundler
+
+      - name: Install Gems
+        run: bundle install
+
+      - name: Set up npm  
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10.24.1' # This pulls v10.24.1 but local nvm-managed node installation (4.3.1) is being used instead.
+          registry-url: 'https://registry.npmjs.org/'
+          
+      - name: Configure npm additional options
+        run: |
+          npm config set strict-ssl false
+          npm config set proxy ${{ vars.HTTP_PROXY }}
+          npm config set https-proxy ${{ vars.HTTP_PROXY }}   
+
+      - name: Install grunt and grunt-cli
+        run: |
+          npm install grunt@0.4.5 -g
+          npm install grunt-cli@0.1.13 -g
+          
+      - name: Install node dependencies
+        run: |
+          npm install
+          
+      - name: Run Grunt build to build UI
+        run: |
+          grunt build
+          
+      - name: Set up NuGet
+        uses: NuGet/setup-nuget@v2.0.0               
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: NuGet Restore
+        run: | 
+          nuget restore "${{github.workspace}}\COLC.sln"
+          
+      - name: MSBuild .NET framework
+        run: |
+          msbuild.exe "${{github.workspace}}\COLC.sln" /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:IncrementalBuild=true /P:SkipExtraFilesOnServer=True /p:platform="Any CPU" /p:configuration="${{ vars.BUILD_CONFIGURATION }}"
+
+      - name: Upload Web Application Deploy Package as artifact to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: COLC-${{ vars.BUILD_CONFIGURATION }}
+          path: "**/COLCWebsite/obj/${{ vars.BUILD_CONFIGURATION }}/Package/${{ vars.WEB_DEPLOY_PACKAGE_NAME }}"        
+          
+  deploy:
+    runs-on: colc-cd-dev
+    environment: Dev
+    needs: [build]
+    
+    steps:
+      - uses: actions/checkout@v4     
+      
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: "*-${{ vars.BUILD_CONFIGURATION }}*"
+          merge-multiple: true
+          github-token: ${{ secrets.GH_API_TOKEN }}
+          run-id: ${{ github.event.inputs.build_runid }}     
+        
+      - name: Deploy web application (Web Deploy)
+        run: |        
+          "${{ vars.MSDEPLOY_PATH }}" ^
+          -verb:sync ^
+          -source:package="${{ vars.WEB_RELEASE_FOLDER }}\${{ vars.ENVIRONMENT }}\Package\${{ vars.WEB_DEPLOY_PACKAGE_NAME }}" ^
+          -dest:auto,userName="${{ vars.DEPLOYMENT_SERVICE_ACCOUNT }}",password="${{ secrets.CICD_DEPLOYMENT_PASSWORD }}" ^
+          -setParam:name="IIS Web Application Name",value="${{ vars.WEBSITE_NAME }}" ^
+          -setParam:name="WorkBC_DBServer",value="${{ vars.WORKBC_DB_SERVER }}" ^
+          -setParam:name="WorkBC_DBUser",value="${{ vars.WORKBC_DB_USER }}" ^
+          -setParam:name="WorkBC_DBPassword",value="${{ secrets.WORKBC_DB_PASSWORD }}" ^
+          -setParam:name="WorkBC_DBName",value="${{ vars.WORKBC_DB_NAME }}" ^
+          -setParam:name="CMS_DBServer",value="${{ vars.CMS_DB_SERVER }}" ^
+          -setParam:name="CMS_DBUser",value="${{ vars.CMS_DB_USER }}" ^
+          -setParam:name="CMS_DBPassword",value="${{ secrets.CMS_DB_PASSWORD }}" ^
+          -setParam:name="CMS_DBName",value="${{ vars.CMS_DB_NAME }}" ^          
+          -setParam:name="CompilationDebugSetting",value="${{ vars.IS_DEBUG }}" ^          
+          -setParam:name="DataCacheMinutes",value="${{ vars.DATA_CACHE_MINUTES }}" ^          
+          -setParam:name="WelcomeBCHost",value="${{ vars.COLC_WELCOMEBC_HOSTNAME }}" ^          
+          -setParam:name="WorkBCHost",value="${{ vars.COLC_WORKBC_HOSTNAME }}" ^                    
+        shell: cmd      

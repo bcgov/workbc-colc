@@ -1,0 +1,27 @@
+@model COLC.COLCWebsite.Models.Home.HomeModels
+@using COLC.COLCWebsite.Helpers
+@using System.Web.Configuration
+
+@{
+    bool debug = WebConfigurationManager.AppSettings["debug"] == "true";
+}
+
+@* <script src="//cdn.polyfill.io/v1/polyfill.js"></script> *@
+<script src="//cdn.polyfill.io/v1/polyfill.js?features=Function.prototype.bind,Array.prototype.indexOf,String.prototype.trim,Object.keys,Array.prototype.forEach"></script>
+@if (debug)
+{
+    <script src="@(new UiAsset("vendor/require", "js").filePath)"></script>
+}
+<script src="@(new UiAsset("main", "js").filePath)" async></script>
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30403698-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script> -->

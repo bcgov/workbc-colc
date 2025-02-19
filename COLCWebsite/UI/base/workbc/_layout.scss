@@ -1,0 +1,92 @@
+.layout-container {
+  @extend %container;
+  padding-top: gap();
+  padding-bottom: gap();
+  position: relative;
+}
+
+
+.layout-content {
+  @include bp(sm, only) {
+    padding: 0 gap();
+  }
+}
+
+.panel{
+  margin-top:45px;
+}
+
+.panel-header{
+  background-color: color("blueDark");  
+  padding:gap(1/2) 25px;
+  @extend %clearfix; 
+  h2,h4{
+    color: color("white");
+  }
+}
+
+.panel-header--big{
+  @extend .panel-header;
+  padding:gap(); 
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.regional-details .panel-header--big,
+.bc-newcomers-and-residents .panel-header--big {
+  padding-top:gap();
+  padding-bottom:gap();
+  @include bp(lg) {
+    padding-top:gap(2.15);
+    padding-bottom:gap(2.15);
+    h2 {
+      font-size:32px;
+    }
+  }
+}
+
+.panel-content{
+  padding: gap();
+  @include border-bottom-radius(4px);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.legend{
+  width:gap(1/2);
+  display: inline-block;  
+  border-top: solid 10px #fff;
+  margin-right:gap(1/2);
+  padding-bottom: 1px;
+  &.bar1{
+    border-top-color: color("housing-work");
+  }
+  &.bar2{
+    border-top-color: color("savings-work");
+  }
+  &.housing{
+    border-top-color: color("housing-work");
+  }
+  &.savings{
+    border-top-color: color("savings-work");
+  }
+  &.living{
+    border-top-color: color("living-work");
+  }
+  &.tax{
+    border-top-color: color("tax-work");
+  }
+}
+
+.legend--right {
+  @extend .legend;
+  margin-left: 10px;
+  width:gap(3/4);  
+  border-top-width: 15px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.locations-container .form-select {
+  background-color: color("white");
+}

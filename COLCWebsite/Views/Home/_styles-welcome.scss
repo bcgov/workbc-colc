@@ -1,0 +1,81 @@
+.banner-image{
+  display: block;
+  background-image:url("../UI/images/WBC-COLC-Banner-3.jpg");
+  background-size: cover;
+  background-position: 49% 49%;
+  max-width: 1200px;
+  background-repeat: no-repeat;
+  height: 420px;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+  @include bp(sm,to,md) {
+    display:none;
+  }
+}
+// body{
+//     background: color("welcome-bg") url("../UI/images/wbc_bknd.jpg") no-repeat;
+//     background-size: cover;
+//     @include bp(sm,to,md) {
+//         background:color("welcome-blue");
+//     }   
+// }
+
+// .page-content{
+//     @include bp(lg) {
+//         padding-left: 15px;
+//         padding-right: 15px;
+//         padding-bottom: 15px;
+//         border-top: 45px solid color("blue-menu-dark");
+//         @include border-bottom-radius(25px);
+//         -pie-box-shadow: -2px 0px 0 rgba(175, 188, 210, .4), 2px 2px 0 rgba(8, 28, 61, .5);
+//         -moz-box-shadow: -2px 0px 0 rgba(175, 188, 210, .4), 2px 2px 0 rgba(8, 28, 61, .5);
+//         -webkit-box-shadow: -2px 0px 0 rgba(175, 188, 210, .4), 2px 2px 0 rgba(8, 28, 61, .5);
+//         box-shadow: -2px 0px 0 rgba(175, 188, 210, .4),  rgba(8, 28, 61, .5);  
+//     }
+//     background-color: color("welcome-blue"); 
+    
+//     .no-svg &{
+//         background: url("../UI/images/outercontent-1px.png") repeat-y;
+//         max-width:940px;
+//         margin:  0 auto;
+//         padding: 0 12px;
+//         z-index: 1;
+//     }
+// }
+
+// .page-content-main {
+  
+//   background: #fff;
+//   @include bp(lg) {
+//     padding: gap(0.75) 0 gap(0.66);
+//     padding-top: gap(3/2);
+//     padding-left:42px;
+//     padding-right:42px;
+//     @include border-bottom-radius(15px);
+//   }
+// }
+
+// .content-outer-bottom {
+//   display:none;
+//   .no-svg &{
+//     display:block;
+//     width: 940px;
+//     background: url("../UI/images/outercontent-bottom.png") no-repeat;
+//     height: 15px;
+//     margin: 0 auto;
+//   }
+// }
+
+.back-to-top {
+    margin-top:gap(2);
+    margin-bottom:gap(2);
+    padding-left:gap();
+    @include bp(lg) {
+      padding-left:0;
+    }
+}
