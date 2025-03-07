@@ -88,7 +88,6 @@ jobs:
           pattern: "*-${{ vars.BUILD_CONFIGURATION }}*"
           merge-multiple: true
           github-token: ${{ secrets.GH_API_TOKEN }}
-          run-id: ${{ github.event.inputs.build_runid }}     
         
       - name: Deploy web application (Web Deploy)
         run: |        
