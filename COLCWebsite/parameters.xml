@@ -4,15 +4,15 @@
 		<parameterEntry kind="XmlFile" scope=".\Web.config" match="/configuration/appSettings/add[@key='DataCacheMinutes']/@value" />
 	</parameter>
 	<parameter name="WelcomeBCHost" description="Host for WelcomeBC skin" defaultValue="456">
-		<parameterEntry kind="XmlFile" scope="iisapp/Web.config" match="/configuration/appSettings/add[@key='WelcomeBCHost']/@value" />
+		<parameterEntry kind="XmlFile" scope="obj\\*\\Package\\PackageTmp\\Web\.config" match="/configuration/appSettings/add[@key='WelcomeBCHost']/@value" />
 	</parameter>
 	<parameter name="WorkBCHost" description="Host for WorkBC skin" defaultValue="123">
-		<parameterEntry kind="XmlFile" scope="iisapp/COLCWebsite/Web.config" match="/configuration/appSettings/add[@key='WorkBCHost']/@value" />
+		<parameterEntry kind="XmlFile" scope="obj\\*\\Package\\PackageTmp\\Web\.config" match="/configuration/appSettings/add[@key='WorkBCHost']/@value" />
 	</parameter>
 	<parameter name="CompilationDebugSetting" description="Debug compilation setting">
-		<parameterEntry kind="XmlFile" scope=".\Web.config" match="/configuration/system.net/compilation/@debug" />
+		<parameterEntry kind="XmlFile" scope="obj\\*\\Package\\PackageTmp\\Web\.config" match="/configuration/system.net/compilation/@debug" />
 	</parameter>
 	<parameter name="CustomErrorsMode" description="Custom errors mode setting, Values: Off, RemoteOnly, On">
-		<parameterEntry kind="XmlFile" scope=".\Web.config" match="/configuration/system.net/customErrors/@mode" />
+		<parameterEntry kind="XmlFile" scope="obj\\*\\Package\\PackageTmp\\Web\.config" match="/configuration/system.net/customErrors/@mode" />
 	</parameter>
 </parameters>
