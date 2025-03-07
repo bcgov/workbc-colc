@@ -4,10 +4,10 @@
 		<parameterEntry kind="XmlFile" scope="Web.config" match="/configuration/appSettings/add[@key='DataCacheMinutes']/@value" />
 	</parameter>
 	<parameter name="WelcomeBCHost" description="Host for WelcomeBC skin" defaultValue="456">
-		<parameterEntry kind="XmlFile" scope="Web.config" match="/configuration/appSettings/add[@key='WelcomeBCHost']/@value" />
+		<parameterEntry kind="XmlFile" scope="COLCWebsite/Web.config" match="/configuration/appSettings/add[@key='WelcomeBCHost']/@value" />
 	</parameter>
 	<parameter name="WorkBCHost" description="Host for WorkBC skin" defaultValue="123">
-		<parameterEntry kind="XmlFile" scope="Web.config" match="/configuration/appSettings/add[@key='WorkBCHost']/@value" />
+		<parameterEntry kind="XmlFile" scope="COLCWebsite/Web.config" match="/configuration/appSettings/add[@key='WorkBCHost']/@value" />
 	</parameter>
 	<parameter name="CompilationDebugSetting" description="Debug compilation setting">
 		<parameterEntry kind="XmlFile" scope="Web.config" match="/configuration/system.net/compilation/@debug" />
