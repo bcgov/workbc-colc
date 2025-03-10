@@ -6,8 +6,8 @@
     bool debug = WebConfigurationManager.AppSettings["debug"] == "true";
 }
 
-@* <script src="//cdn.polyfill.io/v1/polyfill.js"></script> *@
-<script src="//cdn.polyfill.io/v1/polyfill.js?features=Function.prototype.bind,Array.prototype.indexOf,String.prototype.trim,Object.keys,Array.prototype.forEach"></script>
+@* <script src="//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js></script> *@
+<script src="//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=es6"></script>
 @if (debug)
 {
     <script src="@(new UiAsset("vendor/require", "js").filePath)"></script>
