@@ -1,0 +1,45 @@
+name: Deploy COLC to Prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_runid:
+        description: "Run ID of the workflow that contains the build artifacts"
+        required: true
+        type: string
+
+env:
+  NUGET_CERT_REVOCATION_MODE: offline # Bypass cert validation during NuGet Restore
+  HTTP_PROXY: ${{ vars.HTTP_PROXY }}
+  HTTPS_PROXY: ${{ vars.HTTP_PROXY }}
+
+jobs:  
+          
+  deploy:
+    runs-on: colc-cd-prod
+    environment: Prod
+    
+    steps:
+      - uses: actions/checkout@v4
+                 
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: "*-${{ vars.BUILD_CONFIGURATION }}*"
+          merge-multiple: true
+          github-token: ${{ secrets.GH_API_TOKEN }}
+          run-id: ${{ github.event.inputs.build_runid }}     
+        
+      - name: Deploy web application (Web Deploy)
+        run: |        
+          "${{ vars.MSDEPLOY_PATH }}" ^
+          -verb:sync ^
+          -source:package="${{ vars.WEB_RELEASE_FOLDER }}\${{ vars.BUILD_CONFIGURATION }}\Package\${{ vars.WEB_DEPLOY_PACKAGE_NAME }}" ^
+          -dest:auto,userName="${{ vars.DEPLOYMENT_SERVICE_ACCOUNT }}",password="${{ secrets.CICD_DEPLOYMENT_PASSWORD }}" ^
+          -setParam:name="IIS Web Application Name",value="${{ vars.WEBSITE_NAME }}" ^
+          -setParam:name="WorkBCConnectionString-Web.config Connection String",value="Persist Security Info=False;database=${{ vars.WORKBC_DB_NAME }};server=${{ vars.WORKBC_DB_SERVER }};user id=${{ vars.WORKBC_DB_USER }};password=${{ secrets.WORKBC_DB_PASSWORD }};Current Language=English;Connection Timeout=30;" ^
+          -setParam:name="CMSConnectionString-Web.config Connection String",value="Persist Security Info=False;database=${{ vars.CMS_DB_NAME }};server=${{ vars.CMS_DB_SERVER }};user id=${{ vars.CMS_DB_USER }};password=${{ secrets.CMS_DB_PASSWORD }};Current Language=English;Connection Timeout=30;" ^          
+          -setParam:name="CompilationDebugSetting",value="${{ vars.IS_DEBUG }}" ^          
+          -setParam:name="DataCacheMinutes",value="${{ vars.DATA_CACHE_MINUTES }}" ^          
+          -setParam:name="WelcomeBCHost",value="${{ vars.COLC_WELCOMEBC_HOSTNAME }}" ^          
+          -setParam:name="WorkBCHost",value="${{ vars.COLC_WORKBC_HOSTNAME }}"                   
+        shell: cmd      

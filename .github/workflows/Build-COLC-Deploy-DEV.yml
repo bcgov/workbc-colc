@@ -93,7 +93,7 @@ jobs:
         run: |        
           "${{ vars.MSDEPLOY_PATH }}" ^
           -verb:sync -verbose ^
-          -source:package="${{ vars.WEB_RELEASE_FOLDER }}\${{ vars.ENVIRONMENT }}\Package\${{ vars.WEB_DEPLOY_PACKAGE_NAME }}" ^
+          -source:package="${{ vars.WEB_RELEASE_FOLDER }}\${{ vars.BUILD_CONFIGURATION }}\Package\${{ vars.WEB_DEPLOY_PACKAGE_NAME }}" ^
           -dest:auto,userName="${{ vars.DEPLOYMENT_SERVICE_ACCOUNT }}",password="${{ secrets.CICD_DEPLOYMENT_PASSWORD }}" ^
           -setParam:name="IIS Web Application Name",value="${{ vars.WEBSITE_NAME }}" ^
           -setParam:name="WorkBCConnectionString-Web.config Connection String",value="Persist Security Info=False;database=${{ vars.WORKBC_DB_NAME }};server=${{ vars.WORKBC_DB_SERVER }};user id=${{ vars.WORKBC_DB_USER }};password=${{ secrets.WORKBC_DB_PASSWORD }};Current Language=English;Connection Timeout=30;" ^
