@@ -14,7 +14,8 @@ env:
   HTTPS_PROXY: ${{ vars.HTTP_PROXY }}
 
 jobs:
-  build:
+  build_test:
+    name: Build for Test
     environment: Test
     runs-on: colc-ci
     defaults:
@@ -73,5 +74,67 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: COLC-${{ vars.BUILD_CONFIGURATION }}
-          path: "**/COLCWebsite/obj/${{ vars.BUILD_CONFIGURATION }}/Package/${{ vars.WEB_DEPLOY_PACKAGE_NAME }}"        
+          path: "**/COLCWebsite/obj/${{ vars.BUILD_CONFIGURATION }}/Package/${{ vars.WEB_DEPLOY_PACKAGE_NAME }}"
+          
+  build_prod:
+    name: Build for Prod
+    environment: Prod
+    runs-on: colc-ci
+    defaults:
+      run:
+        working-directory: "${{github.workspace}}/COLCWebsite"
+
+    steps:
+      - uses: actions/checkout@v4             
+
+      - name: Install Bundler # Ruby/gem/bundler are needed only for sass and compass. Can't these be installed with npm?
+        run: gem install bundler
+
+      - name: Install Gems
+        run: bundle install
+
+      - name: Set up npm  
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10.24.1' # This pulls v10.24.1 but local nvm-managed node installation (4.3.1) is being used instead.
+          registry-url: 'https://registry.npmjs.org/'
+          
+      - name: Configure npm additional options
+        run: |
+          npm config set strict-ssl false
+          npm config set proxy ${{ vars.HTTP_PROXY }}
+          npm config set https-proxy ${{ vars.HTTP_PROXY }}   
+
+      - name: Install grunt and grunt-cli
+        run: |
+          npm install grunt@0.4.5 -g
+          npm install grunt-cli@0.1.13 -g
+          
+      - name: Install node dependencies
+        run: |
+          npm install
+          
+      - name: Run Grunt build to build UI
+        run: |
+          grunt build
+          
+      - name: Set up NuGet
+        uses: NuGet/setup-nuget@v2.0.0               
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: NuGet Restore
+        run: | 
+          nuget restore "${{github.workspace}}\COLC.sln"
+          
+      - name: MSBuild .NET framework
+        run: |
+          msbuild.exe "${{github.workspace}}\COLC.sln" /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:IncrementalBuild=true /P:SkipExtraFilesOnServer=True /p:platform="Any CPU" /p:configuration="${{ vars.BUILD_CONFIGURATION }}"
+
+      - name: Upload Web Application Deploy Package as artifact to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: COLC-${{ vars.BUILD_CONFIGURATION }}
+          path: "**/COLCWebsite/obj/${{ vars.BUILD_CONFIGURATION }}/Package/${{ vars.WEB_DEPLOY_PACKAGE_NAME }}"    
           
