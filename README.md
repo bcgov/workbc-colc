@@ -1,3 +1,4 @@
+![Lifecycle:Retired](https://img.shields.io/badge/Lifecycle-Retired-d45500)
 >⚠️ This repository has been archived.
 >
 >The Cost of Living Calculator was decommissioned on April 14, 2026. For more information, read this article.
